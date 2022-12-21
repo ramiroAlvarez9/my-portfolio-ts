@@ -1,0 +1,15 @@
+.main__pages {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    z-index: 3;
+    
+    .main__pages--container {
+      border: solid 1px red;
+      position: relative;
+      top: 4vh;
+      height: 100%;
+    }
+  }
+  
