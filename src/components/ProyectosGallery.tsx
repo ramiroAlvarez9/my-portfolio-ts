@@ -21,6 +21,7 @@ const ProyectosGallery = () => {
           href="https://chronosba.com/"
           target="_blank"
           style={linkStyle.styles}
+          className = "info__Container--gallery--a"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -38,6 +39,7 @@ const ProyectosGallery = () => {
           href="https://aura-music.netlify.app/"
           target="_blank"
           style={linkStyle.styles}
+          className = "info__Container--gallery--a"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -53,6 +55,7 @@ const ProyectosGallery = () => {
           href="https://keen-fermi-4af4db.netlify.app/"
           target="_blank"
           style={linkStyle.styles}
+          className = "info__Container--gallery--a"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -70,6 +73,7 @@ const ProyectosGallery = () => {
           href="https://mis-tareas-withjs.netlify.app/"
           target="_blank"
           style={linkStyle.styles}
+          className = "info__Container--gallery--a"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -85,6 +89,7 @@ const ProyectosGallery = () => {
           href="https://github.com/ramiroAlvarez9/txt-generator-electronjs"
           target="_blank"
           style={linkStyle.styles}
+          className = "info__Container--gallery--a"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -102,6 +107,7 @@ const ProyectosGallery = () => {
           href="https://marbp2021.github.io/the-paper-news/"
           target="_blank"
           style={linkStyle.styles}
+          className = "info__Container--gallery--a"
         >
           <div className="info__Container--gallery--imgContainer">
             <img

@@ -8,10 +8,6 @@ import ProyectosGallery from "../components/ProyectosGallery";
 
 const Proyectos = () => {
 
-
-
-
-
   let proyectosTranslateValue: number = useGlobalState(
     "transformProyectosValue"
   )[0];

@@ -3,18 +3,20 @@ $title-color: #ff316b;
 #tecnologia__title {
   font-size: 20px;
 }
-.info__Container{
+
+.info__Container {
+
   //Esto es de los recuadros de la experiencia.
-  .info__Container--experiencia{
+  .info__Container--experiencia {
     height: 30vh;
     color: white;
-    font-family: 'Ubuntu',sans-serif;
-    margin-top:5%;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 5%;
 
-    .info__Container--experiencia--1{
+    .info__Container--experiencia--1 {
       border: solid 1px #000026;
       border-radius: 10px;
-      height: 45%;
+      height: 80%;
       margin-bottom: 5%;
       padding-left: 10px;
       display: flex;
@@ -22,7 +24,7 @@ $title-color: #ff316b;
       justify-content: center;
       background-color: #000026;
 
-      .info__Container--experiencia--1--title{
+      .info__Container--experiencia--1--title {
         margin-bottom: 3%;
 
       }
@@ -36,8 +38,9 @@ $title-color: #ff316b;
 .info__Container--technologies {
   border: solid 0.5px #000042;
   margin-top: 3%;
-  background-color:#00001d;
+  background-color: #00001d;
   border-radius: 10px;
+
   .info__Container--technologies--ContainerIcon {
     display: flex;
     justify-content: left;
@@ -52,32 +55,55 @@ $title-color: #ff316b;
         font-family: "Ubuntu", sans-serif;
         color: white;
         font-size: 10px;
-        margin-left:2px;
-        
+        margin-left: 2px;
+
       }
+
       .info__Container--technologies--ContainerIcon--bar {
         border-radius: 10px;
       }
+
       .front-end {
         border: solid 1px $title-color;
         width: 80%;
-        
+
       }
+
       .back-end {
         border: solid 1px #ed8a00;
         width: 30%;
       }
+
       .react-js {
         border: solid 1px $title-color;
         width: 80%;
       }
-      .javascript{
+
+      .javascript {
         border: solid 1px $title-color;
         width: 80%;
 
       }
     }
+  }
 
-    
+  @media (min-width: 576px) {
+    .info__Container {
+
+      //Esto es de los recuadros de la experiencia.
+      .info__Container--experiencia {
+
+
+        .info__Container--experiencia--1 {
+          height: 25%;
+
+          .info__Container--experiencia--1--title {}
+        }
+      }
+
+
+    }
+
+
   }
 }

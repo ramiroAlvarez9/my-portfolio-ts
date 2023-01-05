@@ -1,0 +1,107 @@
+.section {
+    margin-top: 5%;
+
+    .form {
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        grid-row-gap: 10px;
+        height: 50vh;
+        width: 85vw;
+        margin-left: 3%;
+        color: white;
+        font-family: 'Ubuntu', sans-serif;
+
+
+        //todos los inputs exceptuando el textarea
+        .form__inputs {
+            height: 12%;
+            border-radius: 5px;
+            padding-left: 3%;
+            border: none;
+            background-color: #112252;
+            color: white;
+        }
+
+        .form__inputs::-webkit-input-placeholder {
+            font-family: 'Ubuntu', sans-serif;
+            color: white;
+            opacity: 50%;
+
+        }
+
+        .form__inputs:focus {
+            outline: 0;
+            outline-color: transparent;
+            outline-style: none;
+        }
+
+        //textarea
+        .form__textarea {
+            height: 35%;
+            border-radius: 5px;
+            padding-left: 3%;
+            padding-top: 3%;
+            border: none;
+            background-color: #112252;
+            resize: none;
+            font-family: 'Ubuntu', sans-serif;
+            color: white;
+
+        }
+
+        .form__textarea::-webkit-input-placeholder {
+            font-family: 'Ubuntu', sans-serif;
+            color: white;
+            opacity: 50%;
+
+        }
+
+        .form__textarea:focus {
+            outline: none;
+        }
+
+        //boton submit 
+        .form__submitContainer {
+            display: inherit;
+            justify-content: flex-end;
+            margin-top: 5%;
+
+            .form__submit {
+                background-color: red;
+                width: 30%;
+                height: 250%;
+                border-radius: 10px;
+                color: white;
+                background-color: #112252;
+                border: solid 1px #313b56;
+
+
+            }
+        }
+    }
+
+}
+
+
+@media (min-width: 576px) {
+
+    .section {
+
+        .form {
+            height: 70vh;
+            .form__inputs {
+                height: 50vh;
+
+            }
+
+            .form__textarea {
+                height: 70vh;
+            }
+
+        }
+
+
+    }
+
+}

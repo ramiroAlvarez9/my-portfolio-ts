@@ -1,68 +1,77 @@
-import React from "react";
 import EmailJS from "@emailjs/browser";
+import './contactoForm.scss';
+import '../Pages/estilos-generales.scss';
+import {useState} from 'react';
 
+interface Props  {
 
-const ContactoForm = () => {
+  mostrarCartelDeMensajeEnviado : () => void;
+  
+}
 
-  const sendEmail = (e:any) => {
+const ContactoForm = ({mostrarCartelDeMensajeEnviado} : Props ) => {
+
+  const [opacityValue, setOpacityValue] = useState<number>(100);
+
+  const sendEmail = (e: any) => {
     e.preventDefault();
+    setOpacityValue(50)
+    
 
     EmailJS.sendForm(
       "service_abf2ili",
       "template_oo7ns7b",
       e.target,
       "6AlvGGlMaW70ZKmsz"
+      
     ).then(
-      (result : any) => {
-        console.log(result);
+      (result: any) => {
+        mostrarCartelDeMensajeEnviado();
+        console.log(result.target)
       },
-      (error : any) => {
+      (error: any) => {
         console.log(error);
       }
-    ); /* 
-          .then(() => {
-              setMessage({
-                text: "Mensaje enviado con exito",
-                type: "message message--success",
-              })
-              e.target.reset() // Clear HTML Form
-            })
-            .catch(() => {
-              setMessage({
-                text: "Error al enviar el mensaje",
-                type: "message message--error",
-              })
-            })
-            */
+    );  
   };
+
+  const formStyle = {
+    styles: {
+      opacity: `${opacityValue}%`,
+      
+    },
+  } as const;
+
   return (
     <>
-      <div className="container">
-        <main className="main">
-          <section className="section section__contact">
-            <h1 className="section__subtitle">Contacto</h1>
 
-            <form className="form" onSubmit={sendEmail}>
-              <input type="text" name="nombre" placeholder="Nombre" />
-              <input type="email" name="email" placeholder="Email" />
-              <input type="text" name="asunto" placeholder="Asunto" />
-              <textarea
-                className="textarea"
-                name="mensaje"
-                placeholder="Mensaje"
-              ></textarea>
+      <section className="section" style = {formStyle.styles} >
+        <form className="form" onSubmit={sendEmail}>
 
-              <input
-                type="submit"
-                name="enviar"
-                className="button"
-                value="Send Message"
-              />
-            </form>
-          </section>
-        </main>
-      </div>
+          <input type="text" name="nombre" placeholder="Nombre" className="form__inputs" />
+          <input type="email" name="email" placeholder="Email" className="form__inputs" />
+          <input type="text" name="asunto" placeholder="Asunto" className="form__inputs" />
+          <textarea
+            className="form__textarea"
+            name="mensaje"
+            placeholder="Mensaje"
+          ></textarea>
+
+          <div className="form__submitContainer">
+            <input
+              type="submit"
+              name="enviar"
+              value="Enviar"
+              className="form__submit"
+            />
+          </div>
+        </form>
+      </section>
+
+
+
     </>
+
   );
 };
 

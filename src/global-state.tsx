@@ -7,6 +7,10 @@ const { setGlobalState, useGlobalState } = createGlobalState({
   transformTecnologiasValue: 100,
   transformBlogValue: 100,
   transformContactoValue: 100,
+
+  //desktop mode
+
+  transformMenuValueDesktop: 0,
 });
 
 export { useGlobalState, setGlobalState };
