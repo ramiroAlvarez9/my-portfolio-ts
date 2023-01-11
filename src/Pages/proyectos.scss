@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     .info__Container--gallery--img {
       height: 25%;
       width: 25%;
@@ -45,12 +46,60 @@
 
 }
 
-@media (min-width: 576px) {
+@media (min-width: 1200px) {
+  .info__Container {
+    .proyectosTitle {
+      color: white;
+      transform: rotate(-90deg);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      opacity: 10%;
+      font-size: 60px;
+      text-transform: lowercase;
+      width: 100%;
+    }
+  }
 
   .info__Container--gallery {
+    margin-top: 1%;
+    height: 100vh;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 75% 75% 75%;
+    row-gap: 1%;
+
+
     .info__Container--gallery--a {
 
-  
+      width: 100%;
+      height: 100%;
+      border-right: solid 1px rgba(0, 0, 255, 0.267);
+      
+
+      .info__Container--gallery--img {
+        
+        height: 100%;
+        width: 100%;
+        
+      }
+
+      .info__Container--gallery--imgContainer {
+        height: 100%;
+        width: 100%;
+
+
+
+        .info__Container--gallery--title {
+          margin-top: 5%;
+          color: white;
+          font-family: 'Ubuntu', sans-serif;
+          font-weight: 100;
+          font-style: italic;
+          text-align: center;
+          font-size: 25px;
+        }
+
+      }
     }
   }
 

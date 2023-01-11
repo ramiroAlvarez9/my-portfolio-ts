@@ -10,15 +10,39 @@
     align-items: center;
     flex-direction: column;
     background-color: #112252;
-    transform : transition;
+    transform: transition;
     transition-duration: 0.5s;
 
-    .mensaje__container--title{
-        color : white;
+    .mensaje__container--title {
+        color: white;
+    }
+}
 
+@media (min-width: 1200px) {
+    .contacto {
+        display: flex;
+        justify-content: center;
+        .contacto__container--form--title{
+            color: white;
+            font-size: 20px;
+            margin-left:3%;
+            opacity: 10%;
+        }
+
+        .contacto__container--info {
+            border: solid 1px green;
+            width: 50%;
+            display: none;
+
+
+        }
+        .contacto__container--form{
+
+
+        }
 
     }
-    
- 
+
+
 
 }

@@ -5,8 +5,14 @@ import { createBrowserRouter, createRoutesFromElements, Route, BrowserRouter, Ro
 import { useGlobalState, setGlobalState } from "../global-state";
 
 
+
+
 const Menu = () => {
 
+
+  type GlobalTransformType = "transformInicioValue" | "transformProyectosValue" | "transformTecnologiasValue" | "transformContactoValue"
+
+  //rutas 
   const router = createBrowserRouter(
     createRoutesFromElements(
       //PENDIENTE: crear componente de error para rutas ///
@@ -20,29 +26,15 @@ const Menu = () => {
     )
   );
 
-  function mostrarPaginaInicio(): void {
+  function mostrarPagina(transformPagina: GlobalTransformType): void {
+
     if (window.screen.width > 1200) {
       setGlobalState("transformMenuValueDesktop", 100);
-      setGlobalState("transformInicioValue", 0);
+      setGlobalState(transformPagina, 0);
     } else {
       setGlobalState("transformMenuValue", -100);
-      setGlobalState("transformInicioValue", 0);
+      setGlobalState(transformPagina, 0);
     }
-
-
-  }
-
-  function mostrarPaginaProyectos(): void {
-    setGlobalState("transformMenuValue", -100);
-    setGlobalState("transformProyectosValue", 0);
-  }
-  function mostrarPaginaTecnologias(): void {
-    setGlobalState("transformMenuValue", -100);
-    setGlobalState("transformTecnologiasValue", 0);
-  }
-  function mostrarPaginaContacto(): void {
-    setGlobalState("transformMenuValue", -100);
-    setGlobalState("transformContactoValue", 0);
   }
 
   const menu__container = {
@@ -67,7 +59,7 @@ const Menu = () => {
         <BrowserRouter>
           <div className="menu__container" style={menu__container.styles}>
             <div className="elementsContainer">
-              <Link to="inicio" onClick={mostrarPaginaInicio} style={linkStyle.styles}>
+              <Link to="inicio" onClick={() => mostrarPagina("transformInicioValue")} style={linkStyle.styles}>
                 <div className="elementsContainer__container ">
                   <Icon
                     icon="material-symbols:home"
@@ -81,7 +73,7 @@ const Menu = () => {
 
               <Link
                 to="proyectos"
-                onClick={mostrarPaginaProyectos}
+                onClick={() => mostrarPagina("transformProyectosValue")}
                 style={linkStyle.styles}
               >
                 <div className="elementsContainer__container">
@@ -98,7 +90,7 @@ const Menu = () => {
               </Link>
               <Link
                 to="tecnologias"
-                onClick={mostrarPaginaTecnologias}
+                onClick={() => mostrarPagina("transformTecnologiasValue")}
                 style={linkStyle.styles}
               >
                 <div className="elementsContainer__container">
@@ -130,7 +122,7 @@ const Menu = () => {
 
               <Link
                 to="contacto"
-                onClick={mostrarPaginaContacto}
+                onClick={() => mostrarPagina("transformContactoValue")}
                 style={linkStyle.styles}
               >
                 <div className="elementsContainer__container">

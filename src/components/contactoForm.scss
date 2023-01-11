@@ -1,6 +1,5 @@
 .section {
     margin-top: 5%;
-
     .form {
         max-width: 600px;
         display: flex;
@@ -11,8 +10,6 @@
         margin-left: 3%;
         color: white;
         font-family: 'Ubuntu', sans-serif;
-
-
         //todos los inputs exceptuando el textarea
         .form__inputs {
             height: 12%;
@@ -22,7 +19,6 @@
             background-color: #112252;
             color: white;
         }
-
         .form__inputs::-webkit-input-placeholder {
             font-family: 'Ubuntu', sans-serif;
             color: white;
@@ -102,6 +98,22 @@
         }
 
 
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .section{
+        
+        .form{
+            margin-top:10%;
+            max-width: 1000px;
+            .form__inputs{
+                
+
+            }
+        }
     }
 
 }

@@ -1,39 +1,43 @@
 import { useState } from "react";
 import "./estilos-generales.scss";
 import { useGlobalState, setGlobalState } from "../global-state";
-import { Link, BrowserRouter } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import ContactoForm from '../components/ContactoForm';
+import BackButtonMenu from "../components/BackButtonMenu";
 import './contacto.scss';
 
 const Contacto = () => {
-
-  let contactoTranslateValue: number = useGlobalState(
-    "transformContactoValue"
-  )[0];
-
+  
   const [mensajeEnviado, setMensajeEnviado] = useState<boolean>(false);
 
-  const main__pages = {
+  let contactoTranslateValue: number = useGlobalState("transformContactoValue")[0];
+
+  const main__pages = 
+  {
     styles: {
       transform: `translate(${contactoTranslateValue}%)`,
       transition: "0.5s",
       transitionDelay: "0.1s",
     },
   } as const;
-  const linkStyle = {
-    styles: {
-      textDecoration: "none",
-      WebkitTapHighlightColor: "transparent",
-    },
-  } as const;
 
-  function ocultarContacto(): void {
-    setGlobalState("transformMenuValue", 0);
-    setGlobalState("transformContactoValue", 100);
+
+  function ocultarContacto(): void 
+  {
+    if (window.screen.width < 1200) 
+    {
+      setGlobalState("transformMenuValue", 0);
+      setGlobalState("transformContactoValue", 100);
+    }
+    else 
+    {
+      setGlobalState("transformMenuValueDesktop", 0);
+      setGlobalState("transformContactoValue", 100);
+    }
   }
 
-  function mostrarCartelDeMensajeEnviado(): void {
+  function mostrarCartelDeMensajeEnviado(): void 
+  {
 
     setMensajeEnviado(true);
 
@@ -43,21 +47,10 @@ const Contacto = () => {
     <>
       <main className="main__pages" style={main__pages.styles}>
         <div className="main__pages--container">
-          <BrowserRouter>
-            <Link to="/" onClick={ocultarContacto} style={linkStyle.styles}>
-              <div className="main__pages--container--backButton">
-                <div className="main__pages--container--backButton--container">
-                  <Icon
-                    icon="material-symbols:arrow-back-ios-new-rounded"
-                    color="#fafafa"
-                    width="30"
-                    height="30"
-                  />
-                  VOLVER A MENU PRINCIPAL
-                </div>
-              </div>
-            </Link>
-          </BrowserRouter>
+          <BackButtonMenu
+            ocultar={ocultarContacto}
+
+          />
           {
             mensajeEnviado ?
 
@@ -68,22 +61,29 @@ const Contacto = () => {
 
               :
 
-              <div className="info__Container">
-                <h1 className="info__Container--title" id="tecnologia__title">
-                  Contacto
-                </h1>
-                <p className="info__Container--paragraph">
-                  Podemos contactarnos.<br />
-                  Recordá dejar tu mail en el campo correspondiente, <br />
-                  así, en la brevedad, <br /> podré responderte.
-                </p>
+              <div className="info__Container contacto">
 
-                <ContactoForm
 
-                  mostrarCartelDeMensajeEnviado={mostrarCartelDeMensajeEnviado}
+                <div className="contacto__container--info">
 
-                />
+                  <h1 className="info__Container--title" id="tecnologia__title">
+                    Contacto
+                  </h1>
+                  <p className="info__Container--paragraph">
+                    Podemos contactarnos.<br />
+                    Recordá dejar tu mail en el campo correspondiente, <br />
+                    así, en la brevedad, <br /> podré responderte.
+                  </p>
 
+                </div>
+                <div className="contacto__container--form">
+                  
+                  <ContactoForm
+
+                    mostrarCartelDeMensajeEnviado={mostrarCartelDeMensajeEnviado}
+
+                  />
+                </div>
 
               </div>
 

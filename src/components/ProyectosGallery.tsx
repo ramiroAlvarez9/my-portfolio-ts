@@ -1,4 +1,3 @@
-import React from "react";
 import proyecto1 from "../Pages/assets/img/1.png";
 import proyecto2 from "../Pages/assets/img/2.png";
 import proyecto3 from "../Pages/assets/img/3.png";
@@ -6,7 +5,9 @@ import proyecto4 from "../Pages/assets/img/4.png";
 import proyecto5 from "../Pages/assets/img/5.png";
 import proyecto6 from "../Pages/assets/img/6.png";
 
+
 const ProyectosGallery = () => {
+  
   const linkStyle = {
     styles: {
       textDecoration: "none",

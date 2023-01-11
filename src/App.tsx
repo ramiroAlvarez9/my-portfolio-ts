@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./App.scss";
 import "./reset.min.css";
 import Menu from "./components/Menu";
@@ -7,40 +7,39 @@ import Index from "./components/Index";
 import { setGlobalState } from "./global-state";
 
 function App() {
-  function mostrarPaginaInicio(): void {
-    setGlobalState("transformMenuValue", -100);
-    setGlobalState("transformInicioValue", 0);
-  }
-  function mostrarPaginaProyectos(): void {
-    setGlobalState("transformMenuValue", -100);
-    setGlobalState("transformProyectosValue", 0);
-  }
-  function mostrarPaginaTecnologias(): void {
-    setGlobalState("transformMenuValue", -100);
-    setGlobalState("transformTecnologiasValue", 0);
-  }
-  function mostrarPaginaBlog(): void {
-    setGlobalState("transformMenuValue", -100);
-    setGlobalState("transformBlogValue", 0);
-  }
-  function mostrarPaginaContacto(): void {
-    setGlobalState("transformMenuValue", -100);
-    setGlobalState("transformContactoValue", 0);
-  }
 
-  useEffect(() => {
-    if (window.location.href.includes("/inicio")) {
-      mostrarPaginaInicio();
-    } else if (window.location.href.includes("/proyectos")) {
-      mostrarPaginaProyectos();
-    } else if (window.location.href.includes("/tecnologias")) {
-      mostrarPaginaTecnologias();
-    } else if (window.location.href.includes("/blog")) {
-      mostrarPaginaBlog();
-    } else if (window.location.href.includes("/contacto")) {
-      mostrarPaginaContacto();
+  type GlobalTransformType = "transformInicioValue" | "transformProyectosValue" | "transformTecnologiasValue" | "transformContactoValue"
+
+  useEffect( () => {
+
+    function mostrarPagina(transformPagina: GlobalTransformType): void 
+    {
+      if (window.screen.width > 1200) {
+        setGlobalState("transformMenuValueDesktop", 100);
+        setGlobalState(transformPagina, 0);
+      } else {
+        setGlobalState("transformMenuValue", -100);
+        setGlobalState(transformPagina, 0);
+      }
     }
-  }, []);
+  
+    if (window.location.href.includes("/inicio")) 
+    {
+      mostrarPagina("transformInicioValue");
+    } 
+    else if (window.location.href.includes("/proyectos")) 
+    {
+      mostrarPagina("transformProyectosValue");
+    } 
+    else if (window.location.href.includes("/tecnologias")) 
+    {
+      mostrarPagina("transformTecnologiasValue");
+    } 
+    else if (window.location.href.includes("/contacto")) 
+    {
+      mostrarPagina("transformContactoValue");
+    }
+  }, []) ;
 
   return (
     <>
@@ -48,9 +47,9 @@ function App() {
 
       <Header />
 
-      <Index />
+      <Index /> {/* <-- All pages from ./Pages are  in this component*/}
 
-      {/* <-- All pages from ./ages are  in this component*/}
+      
     </>
   );
 }

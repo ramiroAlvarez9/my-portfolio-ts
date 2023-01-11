@@ -46,6 +46,9 @@
     ]
   },
   "devDependencies": {
-    "@iconify/react": "^4.0.1"
+    "@iconify/react": "^4.0.1",
+    "envify": "^4.1.0",
+    "terser": "^5.16.1",
+    "uglifyify": "^5.0.2"
   }
 }
