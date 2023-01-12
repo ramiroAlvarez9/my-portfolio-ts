@@ -4,18 +4,14 @@ import { Link } from "react-router-dom";
 import { createBrowserRouter, createRoutesFromElements, Route, BrowserRouter, RouterProvider } from "react-router-dom";
 import { useGlobalState, setGlobalState } from "../global-state";
 
-
-
-
 const Menu = () => {
-
 
   type GlobalTransformType = "transformInicioValue" | "transformProyectosValue" | "transformTecnologiasValue" | "transformContactoValue"
 
   //rutas 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      //PENDIENTE: crear componente de error para rutas ///
+
       <Route path="/" element={null}>
         <Route path="inicio" element={null} />
         <Route path="proyectos" element={null} />
@@ -108,6 +104,7 @@ const Menu = () => {
 
               <a href="https://medium.com/@ramiro.al.alvarez" target="_blank"
                 style={linkStyle.styles}
+                rel="noopener noreferrer"
               >
                 <div className="elementsContainer__container">
                   <Icon

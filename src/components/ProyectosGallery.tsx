@@ -23,6 +23,7 @@ const ProyectosGallery = () => {
           target="_blank"
           style={linkStyle.styles}
           className = "info__Container--gallery--a"
+          rel="noopener noreferrer"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -41,6 +42,7 @@ const ProyectosGallery = () => {
           target="_blank"
           style={linkStyle.styles}
           className = "info__Container--gallery--a"
+          rel="noopener noreferrer"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -57,6 +59,7 @@ const ProyectosGallery = () => {
           target="_blank"
           style={linkStyle.styles}
           className = "info__Container--gallery--a"
+          rel="noopener noreferrer"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -75,6 +78,7 @@ const ProyectosGallery = () => {
           target="_blank"
           style={linkStyle.styles}
           className = "info__Container--gallery--a"
+          rel="noopener noreferrer"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -91,6 +95,7 @@ const ProyectosGallery = () => {
           target="_blank"
           style={linkStyle.styles}
           className = "info__Container--gallery--a"
+          rel="noopener noreferrer"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
@@ -109,6 +114,7 @@ const ProyectosGallery = () => {
           target="_blank"
           style={linkStyle.styles}
           className = "info__Container--gallery--a"
+          rel="noopener noreferrer"
         >
           <div className="info__Container--gallery--imgContainer">
             <img
