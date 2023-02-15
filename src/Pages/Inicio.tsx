@@ -41,7 +41,7 @@ const Inicio = () => {
   return (
     <>
     
-      <main className="main__pages" style={main__pages.styles}>
+      <section className="main__pages" style={main__pages.styles}>
       
         <AnimationBackground />
 
@@ -104,7 +104,7 @@ const Inicio = () => {
           </div>
 
         </div>
-      </main>
+      </section>
     </>
   );
 };

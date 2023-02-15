@@ -45,7 +45,7 @@ const Contacto = () => {
 
   return (
     <>
-      <main className="main__pages" style={main__pages.styles}>
+      <section className="main__pages" style={main__pages.styles}>
         <div className="main__pages--container">
           <BackButtonMenu
             ocultar={ocultarContacto}
@@ -90,7 +90,7 @@ const Contacto = () => {
           }
 
         </div>
-      </main>
+      </section>
     </>
   );
 };

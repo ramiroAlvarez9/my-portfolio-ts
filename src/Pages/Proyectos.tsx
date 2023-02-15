@@ -31,7 +31,7 @@ const Proyectos = () => {
 
     return (
       <>
-        <main className="main__pages" style={main__pages.styles}>
+        <section className="main__pages" style={main__pages.styles}>
           <div className="main__pages--container">
             
             
@@ -50,7 +50,7 @@ const Proyectos = () => {
 
           </div>
           </div>
-        </main>
+        </section>
       </>
     );
   };
