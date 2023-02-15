@@ -18,8 +18,6 @@ const Proyectos = () => {
     },
   } as const;
 
-
-
     function ocultarProyectos(): void {
       if (window.screen.width < 1200) {
         setGlobalState("transformMenuValue", 0);
