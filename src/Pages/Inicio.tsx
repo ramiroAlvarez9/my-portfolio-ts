@@ -40,7 +40,9 @@ const Inicio = () => {
 
   return (
     <>
+    
       <main className="main__pages" style={main__pages.styles}>
+      
         <AnimationBackground />
 
         <div className="main__pages--container">
