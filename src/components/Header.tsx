@@ -1,44 +1,86 @@
-import './header.scss'
-import { Icon } from '@iconify/react';
-import { BrowserRouter } from 'react-router-dom';
+import "./header.scss";
+import { Icon } from "@iconify/react";
+import { BrowserRouter } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-const Header = () => {
-
-    const linkStyle = {
-        styles: {
-            textDecoration: 'none'
-        },
-    } as const;
-
-    return (
-        <>
-            <header className="header">
-
-                <span className="header__title">
-                    Ramiro Alejandro Alvarez
-                </span>
-                <BrowserRouter>
-                    <div className='header__iconContainer'>
-                        <a rel="noopener noreferrer" href="https://github.com/ramiroAlvarez9" target="_blank" style={linkStyle.styles}>
-                            <Icon icon="mdi:github" width="20" height="20" className='header__iconContainer--icon' />
-                        </a>
-                        <a rel="noopener noreferrer" href="https://www.linkedin.com/in/ramiro-alvarez-80a432128/" target="_blank" style={linkStyle.styles} >
-                            <Icon icon="mdi:linkedin" width="20" height="20" className='header__iconContainer--icon' />
-                        </a>
-                        <a rel="noopener noreferrer" href="https://www.instagram.com/ramiro.alvarez21/" target="_blank" style={linkStyle.styles}>
-                            <Icon icon="mdi:instagram" width="20" height="20" className='header__iconContainer--icon' />
-                        </a>
-                        <a rel="noopener noreferrer" href="https://www.canva.com/design/DADPqfH2fKs/bOyF2tJHhesPLmsBNOYs3A/view?utm_content=DADPqfH2fKs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" >
-                            <Icon icon="mdi:resume" color="#fafafa" width="20" height="20" className='header__iconContainer--icon' />
-                        </a>
-                    </div>
-                </BrowserRouter>
-            </header>
-
-
-        </>
-    );
+interface Props {
+    githubLink :  string;
+    linkedinLink: string;
+    instagramLink: string;
+    cvLink: string;
 }
 
-export default Header;
+const Header = ({ githubLink ,linkedinLink, instagramLink, cvLink }: Props) => {
+  const linkStyle = {
+    styles: {
+      textDecoration: "none",
+    },
+  } as const;
 
+
+  return (
+    <>
+      <header className="header">
+        <span className="header__title">Ramiro Alejandro Alvarez</span>
+        <BrowserRouter>
+          <div className="header__iconContainer">
+            <a
+              rel="noopener noreferrer"
+              href= {githubLink}
+              target="_blank"
+              style={linkStyle.styles}
+            >
+              <Icon
+                icon="mdi:github"
+                width="20"
+                height="20"
+                className="header__iconContainer--icon"
+              />
+            </a>
+            <a
+              rel="noopener noreferrer"
+              href= {linkedinLink}
+              target="_blank"
+              style={linkStyle.styles}
+            >
+              <Icon
+                icon="mdi:linkedin"
+                width="20"
+                height="20"
+                className="header__iconContainer--icon"
+              />
+            </a>
+            <a
+              rel="noopener noreferrer"
+              href= {instagramLink}
+              target="_blank"
+              style={linkStyle.styles}
+            >
+              <Icon
+                icon="mdi:instagram"
+                width="20"
+                height="20"
+                className="header__iconContainer--icon"
+              />
+            </a>
+            <a 
+                rel="noopener noreferrer" 
+                href= {cvLink} 
+                target="_blank"
+            >
+              <Icon
+                icon="mdi:resume"
+                color="#fafafa"
+                width="20"
+                height="20"
+                className="header__iconContainer--icon"
+              />
+            </a>
+          </div>
+        </BrowserRouter>
+      </header>
+    </>
+  );
+};
+
+export default Header;
