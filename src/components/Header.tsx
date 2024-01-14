@@ -1,7 +1,6 @@
 import "./header.scss";
 import { Icon } from "@iconify/react";
 import { BrowserRouter } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 interface Props {
     githubLink :  string;

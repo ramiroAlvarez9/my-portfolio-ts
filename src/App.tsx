@@ -77,10 +77,10 @@ function App() {
     }
     // fetch data from google sheets
     fetchCSVData();
-  }, []);
+  }, [ fetchCSVData ] );
 
   const setCsvLinkNotEmpty = (posArray: number) => {
-    if (csvData[posArray] == undefined) {
+    if (csvData[posArray] === undefined) {
       return "";
     } else {
       return csvData[posArray][""];

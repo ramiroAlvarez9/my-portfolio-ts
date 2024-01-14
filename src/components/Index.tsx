@@ -1,5 +1,6 @@
 import "./index.scss";
 import "../Pages/estilos-generales.scss";
+import AnimationBackgroundMain from "./AnimationBackgroundMain";
 import Inicio from "../Pages/Inicio";
 import Proyectos from "../Pages/Proyectos";
 import Tecnologias from "../Pages/Tecnologias";
@@ -9,63 +10,17 @@ const Index = () => {
   return (
     <>
       <main className="main">
-        <div   className="stars">
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-        </div>
-
+        
+        <AnimationBackgroundMain />
+        
         <Inicio />
+
         <Proyectos />
+        
         <Tecnologias />
+        
         <Contacto />
+        
       </main>
     </>
   );
