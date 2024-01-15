@@ -10,7 +10,6 @@
     @return $random_range;
 }
 
-
 .animationBackground {
     position: absolute;
     z-index: -1;
@@ -20,6 +19,7 @@
     overflow: hidden;
 }
 
+@media (min-width: 1200px) {
 
 
     .stars {
@@ -119,3 +119,4 @@
             opacity: 0.6;
         }
     }
+}
