@@ -1,4 +1,4 @@
-import './animationBackground.scss';
+import '../global.scss';
 
 const AnimationBackground = () => {
     return (

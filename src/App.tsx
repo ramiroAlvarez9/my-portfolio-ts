@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
-import "./App.scss";
-import "./reset.min.css";
 import Menu from "./components/Menu";
 import Header from "./components/Header";
-import Index from "./components/Index";
+import "./global.scss";
+import AnimationBackgroundMain from "./components/AnimationBackgroundMain";
+import Inicio from "./Pages/Inicio";
+import Proyectos from "./Pages/Proyectos";
+import Tecnologias from "./Pages/Tecnologias";
+import Contacto from "./Pages/Contacto";
+import "./App.scss";
+import "./reset.min.css";
 import { setGlobalState } from "./global-state";
 import axios from "axios"; // Import Axios
 
@@ -20,7 +25,7 @@ function App() {
 
   const [csvData, setCsvData] = useState<CsvDataRow[]>([]);
 
-  //fetch data from google sheets 
+  //fetch data from google sheets
   const fetchCSVData = (): void => {
     const csvUrl =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vRcYrbt_Ip3Km97jqq7CDP9k8GSx5RTx4nWQwcm46ELnY9xYFZHBvNlNAyYWw7OEioVfpUwQz7hMCnf/pub?output=csv";
@@ -77,28 +82,65 @@ function App() {
     }
     // fetch data from google sheets
     fetchCSVData();
-  }, [ fetchCSVData ] );
+  }, []);
 
-  const setCsvLinkNotEmpty = (posArray: number) => {
-    if (csvData[posArray] === undefined) {
+  const LinksParaHeaderNoVaciosEnPosicion_ = (posArray: number) => {
+    if (csvData[posArray] === undefined) 
+    {
       return "";
-    } else {
-      return csvData[posArray][""];
+    } 
+    else 
+    {
+      return csvData[posArray]["2"];
     }
   };
 
+  const ProyectosParaGaleria = () =>
+  {
+    
+    if (csvData[0] === undefined) 
+    {
+    
+      return [];
+    
+    } 
+    else 
+    {
+      const dataParaGaleria = csvData.slice(7,13);
+
+      return dataParaGaleria;
+
+    }
+
+
+  }
+  
   return (
     <>
       <Menu />
-      
-      <Header 
-        githubLink    =  {setCsvLinkNotEmpty(0)}
-        linkedinLink  =  {setCsvLinkNotEmpty(1)}
-        instagramLink =  {setCsvLinkNotEmpty(2)}  
-        cvLink        =  {setCsvLinkNotEmpty(3)} 
+
+      <Header
+        
+        githubLink    = {LinksParaHeaderNoVaciosEnPosicion_(0)}
+        linkedinLink  = {LinksParaHeaderNoVaciosEnPosicion_(1)}
+        instagramLink = {LinksParaHeaderNoVaciosEnPosicion_(2)}
+        cvLink        = {LinksParaHeaderNoVaciosEnPosicion_(3)}
+
       />
-      
-      <Index /> {/* <-- All pages from ./Pages are  in this component*/}
+
+      <main className="main">
+
+        <AnimationBackgroundMain />
+        <Inicio />
+        <Proyectos  
+
+          projects={ProyectosParaGaleria()}
+         
+         />
+        <Tecnologias />
+        <Contacto />
+
+      </main>
     </>
   );
 }

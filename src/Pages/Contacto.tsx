@@ -1,10 +1,9 @@
 import { useState } from "react";
-import "./estilos-generales.scss";
+import '../global.scss';
 import { useGlobalState, setGlobalState } from "../global-state";
 import { Icon } from "@iconify/react";
 import ContactoForm from '../components/ContactoForm';
 import BackButtonMenu from "../components/BackButtonMenu";
-import './contacto.scss';
 
 const Contacto = () => {
   

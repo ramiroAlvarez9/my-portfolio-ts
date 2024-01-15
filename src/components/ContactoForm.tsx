@@ -1,6 +1,5 @@
 import EmailJS from "@emailjs/browser";
-import './contactoForm.scss';
-import '../Pages/estilos-generales.scss';
+import '../global.scss';
 import { useState } from 'react';
 
 interface Props 

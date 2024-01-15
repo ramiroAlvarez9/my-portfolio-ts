@@ -1,5 +1,4 @@
-import "./estilos-generales.scss";
-import "./tecnologias.scss";
+import '../global.scss';
 import { useGlobalState, setGlobalState } from "../global-state";
 import BackButtonMenu from "../components/BackButtonMenu";
 import TecnologiasBar from "../components/TecnologiasBar";

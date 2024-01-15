@@ -1,6 +1,6 @@
 import { Link, BrowserRouter } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import "../Pages/estilos-generales.scss";
+import '../global.scss';
 
 interface Props 
 {

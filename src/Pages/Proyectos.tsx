@@ -1,10 +1,15 @@
-import "./estilos-generales.scss";
-import "./proyectos.scss";
+import '../global.scss';
 import { useGlobalState, setGlobalState } from "../global-state";
 import BackButtonMenu from "../components/BackButtonMenu";
 import ProyectosGallery from "../components/ProyectosGallery";
 
-const Proyectos = () => {
+
+interface Props {
+  projects : object;
+
+}
+
+const Proyectos = ( {projects} : Props ) => {
 
   let proyectosTranslateValue: number = useGlobalState(
     "transformProyectosValue"
@@ -28,7 +33,6 @@ const Proyectos = () => {
         setGlobalState("transformProyectosValue", 100);
       }
     }
-
     return (
       <>
         <section className="main__pages" style={main__pages.styles}>
@@ -45,6 +49,8 @@ const Proyectos = () => {
               <h1 className="info__Container--title proyectosTitle">Proyectos</h1>
 
             <ProyectosGallery
+
+
             />
 
 

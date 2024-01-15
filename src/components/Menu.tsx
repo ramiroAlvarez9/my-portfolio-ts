@@ -1,8 +1,9 @@
 import { Icon } from "@iconify/react";
-import "./menu.scss";
+import '../global.scss';
 import { Link } from "react-router-dom";
 import { createBrowserRouter, createRoutesFromElements, Route, BrowserRouter, RouterProvider } from "react-router-dom";
 import { useGlobalState, setGlobalState } from "../global-state";
+
 
 const Menu = () => {
 
@@ -12,7 +13,7 @@ const Menu = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
 
-      <Route path="/" element={null}>
+      <Route path="/"        element=  {null}>
         <Route path="inicio" element={null} />
         <Route path="proyectos" element={null} />
         <Route path="tecnologias" element={null} />

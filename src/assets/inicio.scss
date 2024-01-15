@@ -1,20 +1,13 @@
 $title-color : #ff316b;
 
 .info__Container {
-
-
     height: 100%;
-
     .info__Container--title {
-
         margin-top: 10%;
         color: $title-color;
         font-size: 50px;
-
     }
-
     .info__Container--paragraph {
-
         font-family: 'Ubuntu', sans-serif;
         width: 80%;
         margin-left: 3%;
@@ -54,10 +47,7 @@ $title-color : #ff316b;
 
         }
     }
-
-
 }
-
 
 @media (min-width: 1200px) {
     
@@ -103,15 +93,7 @@ $title-color : #ff316b;
             display: none;
             .info__Container--end {
                 background-color: orange;
-
-
-                .info__Container--end--img {}
-
-                .titleSubtitleContainer {
-
-                    .info__Container--end--title {}
-
-                }
+                
             }
 
 

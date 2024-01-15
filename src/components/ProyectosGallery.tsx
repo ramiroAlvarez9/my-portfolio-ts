@@ -1,10 +1,17 @@
-import proyecto1 from "../Pages/assets/img/1.png";
-import proyecto2 from "../Pages/assets/img/2.png";
-import proyecto3 from "../Pages/assets/img/3.png";
-import proyecto4 from "../Pages/assets/img/4.png";
-import proyecto5 from "../Pages/assets/img/5.png";
-import proyecto6 from "../Pages/assets/img/6.png";
 
+import proyecto1 from "../assets/1.png";
+import proyecto2 from "../assets/2.png";
+import proyecto3 from "../assets/3.png";
+import proyecto4 from "../assets/4.png";
+import proyecto5 from "../assets/5.png";
+import proyecto6 from "../assets/6.png";
+import '../global.scss';
+
+
+interface Props {
+  projects : object;
+
+}
 
 const ProyectosGallery = () => {
   

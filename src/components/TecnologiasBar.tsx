@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-
+import '../global.scss';
 const TecnologiasBar = () => {
   return (
     <>

@@ -1,4 +1,4 @@
-import "./header.scss";
+import '../global.scss';
 import { Icon } from "@iconify/react";
 import { BrowserRouter } from "react-router-dom";
 

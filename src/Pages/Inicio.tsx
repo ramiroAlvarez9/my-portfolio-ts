@@ -1,5 +1,4 @@
-import "./estilos-generales.scss";
-import "./inicio.scss";
+import '../global.scss';
 import { useGlobalState, setGlobalState } from "../global-state";
 import { Link, BrowserRouter } from "react-router-dom";
 import AnimationBackground from "../components/AnimationBackground";

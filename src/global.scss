@@ -1,0 +1,228 @@
+@import "./assets/animationBackground.scss";
+@import "./assets/animationBackgroundMain.scss";
+@import "./assets/contacto.scss";
+@import "./assets/contactoForm.scss";
+@import "./assets/header.scss";
+@import "./assets/index.scss";
+@import "./assets/inicio.scss";
+@import "./assets/menu.scss";
+@import "./assets/proyectos.scss";
+@import "./assets/tecnologias.scss";
+
+//general styles 
+
+$title-color : #ff316b;
+
+.main__pages {
+  width: 100vw;
+  height: 100vh;
+  background-color: #01011b00;
+  position: absolute;
+  z-index: 3;
+  font-family: 'Prompt', sans-serif;
+  overflow: scroll;
+
+
+  .main__pages--container {
+    margin-top: 2%;
+    position: relative;
+    top: 4vh;
+    height: 100%;
+    left: 2.5%;
+
+    .main__pages--container--backButton {
+      background-color: #112252;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      height: 10%;
+      width: 100vw;
+
+      .main__pages--container--backButton--container {
+        display: inherit;
+        justify-content: right;
+        align-items: center;
+        width: 100%;
+        margin-right: 4vw;
+        color: #fafafa;
+        font-weight: 1000;
+      }
+
+      .info__Container {
+        height: 100%;
+
+        .info__Container--title {
+
+          margin-top: 10%;
+          color: $title-color;
+          font-size: 50px;
+
+        }
+
+        .info__Container--paragraph {
+
+          font-family: 'Ubuntu', sans-serif;
+          width: 80%;
+          margin-left: 3%;
+          margin-top: 10%;
+          color: white;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+}
+
+
+@media (min-width: 576px) {
+
+  .main__pages--container--backButton {
+    height: 20%;
+  }
+
+
+
+}
+
+@media (min-width: 1200px) {
+
+  .main__pages {
+
+    overflow-y: scroll;
+
+    .main__pages--container {
+
+      .main__pages--container--backButton {
+        justify-content: center;
+
+
+
+        .main__pages--container--backButton--container {
+
+          width: 10%;
+        }
+      }
+    }
+  }
+}
+
+
+//END GLOBAL CSS
+
+
+
+/* ------ INICIO STYLES ------ */
+$title-color : #ff316b;
+
+.info__Container {
+    height: 100%;
+    .info__Container--title {
+        margin-top: 10%;
+        color: $title-color;
+        font-size: 50px;
+    }
+    .info__Container--paragraph {
+        font-family: 'Ubuntu', sans-serif;
+        width: 80%;
+        margin-left: 3%;
+        margin-top: 10%;
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+    }
+
+    .info__Container--end {
+
+        margin-left: 3%;
+        margin-top: 7%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .info__Container--end--img {
+
+            border-radius: 50%;
+            width: 30%;
+
+        }
+
+        .titleSubtitleContainer {
+
+            font-family: 'Ubuntu', sans-serif;
+            color: white;
+            margin-left: 3%;
+
+            .info__Container--end--title {
+                margin-bottom: 2%;
+
+
+            }
+
+        }
+    }
+
+}
+
+
+
+/* ------ FIN INICIO STYLES ------ */
+
+/* ------  ------ */
+
+@media (min-width: 1200px) {
+    
+  .inicio__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: -2.6vw;
+      width: 100%;
+      height: 100%;
+
+      .paragraph {
+
+          width: 50%;
+          height: 10%;
+          margin-top: -10%;
+          margin-right: 2.5%;
+          border-radius: 10px;
+          display: inherit;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          
+
+          .info__Container--title {
+              font-size: 5vw;
+              margin-left: 2%;
+
+          }
+
+          .info__Container--paragraph {
+
+              margin-top: 1%;
+              margin-left: 5%;
+              font-size: 30px;
+              line-height: 40px;
+              font-weight: 300;
+              text-align: center;
+          }
+      }
+
+      .end {
+          display: none;
+          .info__Container--end {
+              background-color: orange;
+              
+          }
+
+
+      }
+
+  }
+}
