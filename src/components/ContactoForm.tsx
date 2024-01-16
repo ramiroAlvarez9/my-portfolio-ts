@@ -46,7 +46,7 @@ const ContactoForm = ({ mostrarCartelDeMensajeEnviado }: Props) => {
     <>
 
       <section className="section" style={formStyle.styles} >
-        <h3 className="contacto__container--form--title">Contacto</h3>
+        <h3 className="contacto__container--form--title"></h3>
         <form className="form" onSubmit={sendEmail}>
 
           <input type="text" name="nombre" placeholder="Nombre" className="form__inputs" />

@@ -4,10 +4,7 @@ import BackButtonMenu from "../components/BackButtonMenu";
 import ProyectosGallery from "../components/ProyectosGallery";
 
 
-interface Props {
-  projects : object;
-
-}
+interface Props { projects : Array<object> }
 
 const Proyectos = ( {projects} : Props ) => {
 
@@ -33,23 +30,20 @@ const Proyectos = ( {projects} : Props ) => {
         setGlobalState("transformProyectosValue", 100);
       }
     }
+
     return (
       <>
         <section className="main__pages" style={main__pages.styles}>
           <div className="main__pages--container">
-            
-            
             <BackButtonMenu 
-            
               ocultar = {ocultarProyectos}
-
             />
-
             <div className="info__Container">
-              <h1 className="info__Container--title proyectosTitle">Proyectos</h1>
+              <h1 className="info__Container--title proyectosTitle">proyectos</h1>
 
             <ProyectosGallery
 
+              projects = {projects}
 
             />
 

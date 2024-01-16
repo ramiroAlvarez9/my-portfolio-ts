@@ -17,11 +17,7 @@ interface CsvDataRow {
 }
 
 function App() {
-  type GlobalTransformType =
-    | "transformInicioValue"
-    | "transformProyectosValue"
-    | "transformTecnologiasValue"
-    | "transformContactoValue";
+  type GlobalTransformType = | "transformInicioValue" | "transformProyectosValue" | "transformTecnologiasValue" | "transformContactoValue";
 
   const [csvData, setCsvData] = useState<CsvDataRow[]>([]);
 
@@ -84,36 +80,10 @@ function App() {
     fetchCSVData();
   }, []);
 
-  const LinksParaHeaderNoVaciosEnPosicion_ = (posArray: number) => {
-    if (csvData[posArray] === undefined) 
-    {
-      return "";
-    } 
-    else 
-    {
-      return csvData[posArray]["2"];
-    }
-  };
-
-  const ProyectosParaGaleria = () =>
-  {
-    
-    if (csvData[0] === undefined) 
-    {
-    
-      return [];
-    
-    } 
-    else 
-    {
-      const dataParaGaleria = csvData.slice(7,13);
-
-      return dataParaGaleria;
-
-    }
-
-
-  }
+  const LinksParaHeaderNoVaciosEnPosicion_ = (posArray: number)  => (csvData[posArray] === undefined) ?  '' : csvData[posArray]["2"];
+  const ProyectosParaGaleria = () => csvData.slice(7,13);
+      
+  
   
   return (
     <>

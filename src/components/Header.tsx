@@ -3,10 +3,10 @@ import { Icon } from "@iconify/react";
 import { BrowserRouter } from "react-router-dom";
 
 interface Props {
-    githubLink :  string;
-    linkedinLink: string;
+    githubLink   : string ;
+    linkedinLink : string ;
     instagramLink: string;
-    cvLink: string;
+    cvLink       : string;
 }
 
 const Header = ({ githubLink ,linkedinLink, instagramLink, cvLink }: Props) => {
