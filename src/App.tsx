@@ -1,24 +1,19 @@
 import { useEffect, useState } from "react";
 import Menu from "./components/Menu";
 import Header from "./components/Header";
-import "./global.scss";
 import AnimationBackgroundMain from "./components/AnimationBackgroundMain";
 import Inicio from "./Pages/Inicio";
 import Proyectos from "./Pages/Proyectos";
 import Tecnologias from "./Pages/Tecnologias";
 import Contacto from "./Pages/Contacto";
+import axios from "axios"; 
+import { handlingWindowsAndRoutes } from "./customHooks/controlSlideComponents";
 import "./App.scss";
-import "./reset.min.css";
-import { setGlobalState } from "./global-state";
-import axios from "axios"; // Import Axios
+import "./global.scss";
 
-interface CsvDataRow {
-  [key: string]: string;
-}
+interface CsvDataRow { [key: string]: string }
 
 function App() {
-  type GlobalTransformType = | "transformInicioValue" | "transformProyectosValue" | "transformTecnologiasValue" | "transformContactoValue";
-
   const [csvData, setCsvData] = useState<CsvDataRow[]>([]);
 
   //fetch data from google sheets
@@ -55,62 +50,33 @@ function App() {
   };
 
   useEffect(() => {
-    //handling windows and routes
-
-    function mostrarPagina(transformPagina: GlobalTransformType): void {
-      if (window.screen.width > 1200) {
-        setGlobalState("transformMenuValueDesktop", 100);
-        setGlobalState(transformPagina, 0);
-      } else {
-        setGlobalState("transformMenuValue", -100);
-        setGlobalState(transformPagina, 0);
-      }
-    }
-
-    if (window.location.href.includes("/inicio")) {
-      mostrarPagina("transformInicioValue");
-    } else if (window.location.href.includes("/proyectos")) {
-      mostrarPagina("transformProyectosValue");
-    } else if (window.location.href.includes("/tecnologias")) {
-      mostrarPagina("transformTecnologiasValue");
-    } else if (window.location.href.includes("/contacto")) {
-      mostrarPagina("transformContactoValue");
-    }
-    // fetch data from google sheets
+    handlingWindowsAndRoutes();
     fetchCSVData();
   }, []);
 
-  const LinksParaHeaderNoVaciosEnPosicion_ = (posArray: number)  => (csvData[posArray] === undefined) ?  '' : csvData[posArray]["2"];
-  const ProyectosParaGaleria = () => csvData.slice(7,13);
-      
-  
-  
+  const LinksParaHeaderNoVaciosEnPosicion_ = (posArray: number) => (csvData[posArray] === undefined) ?  '' : csvData[posArray]['2'];
+  const ProyectosParaGaleria = ()    => csvData.slice (7, 13);
+  const experienciaParaMostrar = ()  => csvData.slice (16);
+
   return (
     <>
       <Menu />
 
       <Header
-        
         githubLink    = {LinksParaHeaderNoVaciosEnPosicion_(0)}
         linkedinLink  = {LinksParaHeaderNoVaciosEnPosicion_(1)}
         instagramLink = {LinksParaHeaderNoVaciosEnPosicion_(2)}
         cvLink        = {LinksParaHeaderNoVaciosEnPosicion_(3)}
-
       />
 
-      <main className="main">
-
+      <section className="main">
         <AnimationBackgroundMain />
         <Inicio />
-        <Proyectos  
+        <Proyectos   projects={ProyectosParaGaleria()} />
+        <Tecnologias experiences={experienciaParaMostrar()} />
 
-          projects={ProyectosParaGaleria()}
-         
-         />
-        <Tecnologias />
         <Contacto />
-
-      </main>
+      </section>
     </>
   );
 }

@@ -12,7 +12,14 @@
 //general styles 
 
 $title-color : #ff316b;
-
+.loading__component{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background-color: red;
+}
 .main__pages {
   width: 100vw;
   height: 100vh;
@@ -103,7 +110,7 @@ $title-color : #ff316b;
 
         .main__pages--container--backButton--container {
 
-          width: 10%;
+          width: 90%;
         }
       }
     }

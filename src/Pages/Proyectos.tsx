@@ -1,13 +1,14 @@
-import '../global.scss';
-import { useGlobalState, setGlobalState } from "../global-state";
+import "../global.scss";
+import { useGlobalState } from "../global-state";
 import BackButtonMenu from "../components/BackButtonMenu";
 import ProyectosGallery from "../components/ProyectosGallery";
+import { ocultarProyectos } from "../customHooks/controlSlideComponents";
 
+interface Props {
+  projects: Array<object>;
+}
 
-interface Props { projects : Array<object> }
-
-const Proyectos = ( {projects} : Props ) => {
-
+const Proyectos = ({ projects }: Props) => {
   let proyectosTranslateValue: number = useGlobalState(
     "transformProyectosValue"
   )[0];
@@ -20,39 +21,19 @@ const Proyectos = ( {projects} : Props ) => {
     },
   } as const;
 
-    function ocultarProyectos(): void {
-      if (window.screen.width < 1200) {
-        setGlobalState("transformMenuValue", 0);
-        setGlobalState("transformProyectosValue", 100);
-      }
-      else{
-        setGlobalState("transformMenuValueDesktop", 0); 
-        setGlobalState("transformProyectosValue", 100);
-      }
-    }
-
-    return (
-      <>
-        <section className="main__pages" style={main__pages.styles}>
-          <div className="main__pages--container">
-            <BackButtonMenu 
-              ocultar = {ocultarProyectos}
-            />
-            <div className="info__Container">
-              <h1 className="info__Container--title proyectosTitle">proyectos</h1>
-
-            <ProyectosGallery
-
-              projects = {projects}
-
-            />
-
-
+  return (
+    <>
+      <section className="main__pages" style={main__pages.styles}>
+        <div className="main__pages--container">
+          <BackButtonMenu ocultar={ocultarProyectos} />
+          <div className="info__Container">
+            <h1 className="info__Container--title proyectosTitle">proyectos</h1>
+            <ProyectosGallery projects={projects} />
           </div>
-          </div>
-        </section>
-      </>
-    );
-  };
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default Proyectos;

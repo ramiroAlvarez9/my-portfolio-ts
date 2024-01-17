@@ -1,8 +1,8 @@
 import '../global.scss';
-import { useGlobalState, setGlobalState } from "../global-state";
+import { useGlobalState } from "../global-state";
 import { Link, BrowserRouter } from "react-router-dom";
 import AnimationBackground from "../components/AnimationBackground";
-
+import { ocultarInicio, mostrarPagina } from '../customHooks/controlSlideComponents';
 
 const Inicio = () => {
 
@@ -16,26 +16,6 @@ const Inicio = () => {
     },
   } as const;
 
-  function ocultarInicio(): void {
-    if (window.screen.width < 1200) {
-      setGlobalState("transformMenuValue", 0);
-      setGlobalState("transformInicioValue", 100);
-    }
-    else {
-      setGlobalState("transformMenuValueDesktop", 0);
-      setGlobalState("transformInicioValue", 100);
-    }
-  }
-
-  function mostrarPagina(transformPagina: "transformContactoValue"): void {
-    if (window.screen.width > 1200) {
-      setGlobalState("transformMenuValueDesktop", 100);
-      setGlobalState(transformPagina, 0);
-    } else {
-      setGlobalState("transformMenuValue", -100);
-      setGlobalState(transformPagina, 0);
-    }
-  }
 
   return (
     <>

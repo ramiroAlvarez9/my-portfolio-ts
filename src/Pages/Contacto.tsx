@@ -1,9 +1,10 @@
 import { useState } from "react";
 import '../global.scss';
-import { useGlobalState, setGlobalState } from "../global-state";
+import { useGlobalState } from "../global-state";
 import { Icon } from "@iconify/react";
 import ContactoForm from '../components/ContactoForm';
 import BackButtonMenu from "../components/BackButtonMenu";
+import { ocultarContacto } from "../customHooks/controlSlideComponents";
 
 const Contacto = () => {
   
@@ -21,25 +22,9 @@ const Contacto = () => {
   } as const;
 
 
-  function ocultarContacto(): void 
-  {
-    if (window.screen.width < 1200) 
-    {
-      setGlobalState("transformMenuValue", 0);
-      setGlobalState("transformContactoValue", 100);
-    }
-    else 
-    {
-      setGlobalState("transformMenuValueDesktop", 0);
-      setGlobalState("transformContactoValue", 100);
-    }
-  }
-
   function mostrarCartelDeMensajeEnviado(): void 
   {
-
     setMensajeEnviado(true);
-
   }
 
   return (

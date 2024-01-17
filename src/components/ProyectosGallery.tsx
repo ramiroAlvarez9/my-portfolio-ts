@@ -1,4 +1,5 @@
 import "../global.scss";
+import ReactLoading from "react-loading";
 
 interface Props {
   projects: any;
@@ -16,11 +17,21 @@ const ProyectosGallery = ({ projects }: Props) => {
     <>
       <div className="info__Container--gallery">
         {projects[0] === undefined ? (
-          <h1>nada</h1>
+          <div className="loading__component">
+            
+            <ReactLoading
+              type="cubes"
+              color="#ffffff"
+              height= {667}
+              width = {375}
+            />
+
+          </div>
         ) : (
-          projects.map((element: any) => {
+          projects.map((element: any, key: number) => {
             return (
               <a
+                key={key}
                 href={element["2"]}
                 target="_blank"
                 style={linkStyle.styles}
