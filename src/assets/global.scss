@@ -1,0 +1,78 @@
+@import './colors-palette.scss';
+@import './reset.min.scss';
+
+//-- MENU COMPONENT --//
+.nav {
+    position: absolute;
+    z-index: 1;
+    border: solid 1px blue;
+    width: 100vw;
+    height: 15vh;
+    
+
+    .nav__logo{
+        background-color: green;
+        margin-left: 2%;
+    }
+    .nav__hamburguer{
+        margin-right: 2%;
+
+    }
+}
+
+//-- END MENU COMPONENT --//
+
+
+
+//-- HOME COMPONENT --//
+.home {
+
+    width: 100vw;
+    height: 50vh;
+    background-color: red;
+}
+
+//-- END HOME COMPONENT --//
+
+//-- MUSIC VIDEOS COMPONENT --//
+.musicvideos {
+
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+}
+
+//-- END HOME COMPONENT --//
+
+//-- MUSIC STORE COMPONENT --//
+.musicstore {
+
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+}
+
+//-- END MUSIC STORE COMPONENT --//
+
+//-- CONTACT COMPONENT --//
+.contact {
+
+    width: 100vw;
+    height: 50vh;
+    background-color: orange;
+}
+
+//-- END CONTACT COMPONENT --//
+
+//-- FOOTER COMPONENT --//
+.footer {
+
+    width: 100vw;
+    height: 10vh;
+    background-color: red;
+}
+
+//-- END FOOTER COMPONENT --//
+
+
+
