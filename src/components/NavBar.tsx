@@ -35,6 +35,7 @@ export default function NavBar() {
         </svg>
 
        
+        <Link href="#contact" > contact </Link>
       </nav>
 
       <div className="slide__itemsmenu">
