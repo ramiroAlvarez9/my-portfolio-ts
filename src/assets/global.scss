@@ -1,15 +1,17 @@
-@import './colors-palette.scss';
 @import './reset.min.scss';
+@import './colors-palette.scss';
+
 
 //-- MENU COMPONENT --//
 .nav {
     position: absolute;
     z-index: 1;
+    top: 0;
+    left: 0;
     border: solid 1px blue;
     width: 100vw;
     height: 15vh;
     
-
     .nav__logo{
         background-color: green;
         margin-left: 2%;
@@ -55,7 +57,7 @@
 //-- END MUSIC STORE COMPONENT --//
 
 //-- CONTACT COMPONENT --//
-.contact {
+#contact {
 
     width: 100vw;
     height: 50vh;

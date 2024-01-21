@@ -1,6 +1,8 @@
+"use client";
+
 import NavBar from "@/components/NavBar";
 
-export default function Main() {
+export default function Main() {   
   return (
     <>
 
@@ -8,7 +10,7 @@ export default function Main() {
   
     <section className="home">
 
-      
+
 
       
     </section>
