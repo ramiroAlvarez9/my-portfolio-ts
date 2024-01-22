@@ -2,7 +2,7 @@
 
 export default function MusicStore() {
 
-  const containerStyle = {
+  const containerStyle : object = {
     border: '0',
     margin: '0 auto',
     outline: '0',
@@ -14,21 +14,20 @@ export default function MusicStore() {
     background: 'rgb(0,35,50)',
   };
 
-  return (
+  return ( 
     <>
+      
       <section id="musicstore">
+      
+      music store
+      
         <iframe
           id="embedSoundClick"
           width="100%"
           height="100%"
           src="https://www.soundclick.com/artist/external/standalone.cfm?bandID=1522186"
           style= {containerStyle}
-        
         >
-          Check out Golden Dragon Beats on SoundClick:{" "}
-          <a href="https://soundclick.com/goldendragonbeats" target="_blank">
-            https://goldendragonbeats.soundclick.com/
-          </a>
         </iframe>
       </section>
     </>
