@@ -1,57 +1,110 @@
 @import './reset.min.scss';
 @import './colors-palette.scss';
-
+$menuMarginsLeft: 5%;
 
 //-- MENU COMPONENT --//
+.navDesktop{
+    display: none;
+}
+
 .nav {
     position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
-    border: solid 1px blue;
     width: 100vw;
     height: 15vh;
-    
-    .nav__logo{
+
+    .nav__logo {
         background-color: green;
         margin-left: 2%;
     }
-    .nav__hamburguer{
+
+    .nav__hamburguer {
         margin-right: 2%;
 
     }
 }
+
+.slide {
+
+    width: 100%;
+    height: 100%;
+    background-color: $secondary;
+    position: fixed;
+    z-index: 2;
+    transform: transition;
+    transition: 0.5s;
+    color: $primary;
+    border: solid 1px $tiertary;
+    overflow: scroll;
+
+    .slide__closeMenuContainer {
+        width: 100vw;
+        height: 7.5vh;
+
+        .closeIcon {
+            //margin-right: 10%;
+        }
+    }
+
+    .slide__logo {
+        margin-left: 10%;
+
+    }
+
+    .slide__containerLinks {
+        width: 100%;
+        height: 100%;
+        margin-left: 3%;
+        margin-top: 25%;
+        font-size: 90%;
+
+
+        .slide__links {
+            display: block;
+            margin-bottom: 10%;
+
+        }
+    }
+
+}
+
+
+
+
+
 
 //-- END MENU COMPONENT --//
 
 
 
 //-- HOME COMPONENT --//
-.home {
+#home {
 
     width: 100vw;
     height: 50vh;
-    background-color: red;
+    background-color: $secondary;
 }
 
 //-- END HOME COMPONENT --//
 
 //-- MUSIC VIDEOS COMPONENT --//
-.musicvideos {
+#musicvideos {
 
     width: 100vw;
     height: 100vh;
-    background-color: blue;
+    background-color: $secondary;
 }
 
 //-- END HOME COMPONENT --//
 
 //-- MUSIC STORE COMPONENT --//
-.musicstore {
+#musicstore {
 
     width: 100vw;
     height: 100vh;
-    background-color: green;
+    background-color: $secondary;
 }
 
 //-- END MUSIC STORE COMPONENT --//
@@ -61,20 +114,53 @@
 
     width: 100vw;
     height: 50vh;
-    background-color: orange;
+    background-color: $secondary;
 }
 
 //-- END CONTACT COMPONENT --//
 
 //-- FOOTER COMPONENT --//
-.footer {
+#footer {
 
     width: 100vw;
     height: 10vh;
-    background-color: red;
+    background-color: $secondary;
 }
 
 //-- END FOOTER COMPONENT --//
 
 
 
+//RESPONSIVE DESIGN - MEDIA QUERIES 
+@media (min-width: 1200px) {
+    //-- MENU COMPONENT --// 
+    .nav{
+        display: none;
+    }
+    .navDesktop {   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $secondary;
+        width:  100vw;
+        height: 15vh;
+        border-bottom: solid 0.5px $tiertary;
+        .nav__container{
+            width: 60%;
+        
+        .nav__containerLinks{
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .nav__containerLinks--link{
+                letter-spacing: 1px;
+            }
+        }
+        }
+
+    }
+
+
+    // --END MENU COMPONENT --//
+}

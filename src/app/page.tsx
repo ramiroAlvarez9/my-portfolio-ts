@@ -1,6 +1,6 @@
 import Main        from '../../pages/main';
-import MusicVideos from '../../pages/musicVideos';
-import MusicStore  from '../../pages/musicStore';
+import MusicVideos from '../../pages/musicvideos';
+import MusicStore  from '../../pages/musicstore';
 import Contact     from '../../pages/contact';
 import Footer      from '../../pages/footer';
 import                  '../assets/global.scss';    

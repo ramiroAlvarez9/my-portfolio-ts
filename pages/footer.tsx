@@ -3,7 +3,7 @@
 export default function Footer() {
   return (
     <>
-      <section className="footer">
+      <section id="footer">
         Footer 
       </section>
     </>

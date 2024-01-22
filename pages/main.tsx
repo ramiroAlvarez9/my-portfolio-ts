@@ -8,7 +8,7 @@ export default function Main() {
 
     <NavBar />
   
-    <section className="home">
+    <section id="home">
 
 
 

@@ -3,7 +3,7 @@
 export default function MusicVideos() {
   return (
     <>
-      <section className="musicvideos">
+      <section id="musicvideos">
       
         Music Videos
       
