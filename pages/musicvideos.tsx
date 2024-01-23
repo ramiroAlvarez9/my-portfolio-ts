@@ -5,8 +5,6 @@ export default function MusicVideos() {
     <>
       <section id="musicvideos">
       
-        Music Videos
-      
       </section>
     </>
   );

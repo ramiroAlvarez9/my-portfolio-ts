@@ -8,7 +8,7 @@ import                  '../assets/global.scss';
 export default function Home() {
   return (
     <>     
-
+     
       <Main        />
       <MusicVideos />
       <MusicStore  />

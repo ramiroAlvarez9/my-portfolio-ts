@@ -5,18 +5,20 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import ChevronRightIcon from "./ChevronRightIcon";
 
-export default function MobileNav() {
+export default function MobileNav() 
+{
+
   const [actualWidthSize, setWidthSize] = useState<number>(0);
   const [slideMenuPositionX, setSlideMenuPositionX] = useState<number>(100);
-
+  
   useEffect(() => setWidthSize(window.screen.width), [actualWidthSize]);
 
-  const openTheMenu = () => {
-    if (actualWidthSize >= 768) {
-      setSlideMenuPositionX(50);
-    } else {
-      setSlideMenuPositionX(10);
-    }
+  const openTheMenu = () => 
+  {
+    if (actualWidthSize >= 768) 
+    { setSlideMenuPositionX(50) } 
+    else 
+    { setSlideMenuPositionX(10) }
   };
   const closeTheMenu = () => setSlideMenuPositionX(100);
 

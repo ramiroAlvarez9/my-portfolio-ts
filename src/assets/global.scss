@@ -1,5 +1,6 @@
 @import './reset.min.scss';
 @import './colors-palette.scss';
+
 $menuMarginsLeft: 5%;
 
 //-- MENU COMPONENT --//
@@ -8,12 +9,9 @@ $menuMarginsLeft: 5%;
 }
 
 .nav {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 15vh;
+    background-color: $secondary;  
 
     .nav__logo {
         background-color: green;
@@ -33,6 +31,7 @@ $menuMarginsLeft: 5%;
     background-color: $secondary;
     position: fixed;
     z-index: 2;
+    top: 0vh;
     transform: transition;
     transition: 0.5s;
     color: $primary;
@@ -83,8 +82,30 @@ $menuMarginsLeft: 5%;
 #home {
 
     width: 100vw;
-    height: 50vh;
+    height: 30vh;
     background-color: $secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .home__container{
+        margin-left: 5%;
+        width: 100%;
+        height: 100%;   
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        .items{
+            margin-bottom: 10%;
+        }
+        .home__container--title{
+
+        }
+        .home__container--paragraph{
+        }
+
+    }
 }
 
 //-- END HOME COMPONENT --//
