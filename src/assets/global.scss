@@ -4,17 +4,17 @@
 $menuMarginsLeft: 5%;
 
 //-- MENU COMPONENT --//
-.navDesktop{
+.navDesktop {
     display: none;
 }
 
 .nav {
     width: 100vw;
     height: 15vh;
-    background-color: $secondary;  
+    background-color: $secondary;
+
 
     .nav__logo {
-        background-color: green;
         margin-left: 2%;
     }
 
@@ -35,7 +35,6 @@ $menuMarginsLeft: 5%;
     transform: transition;
     transition: 0.5s;
     color: $primary;
-    border: solid 1px $tiertary;
     overflow: scroll;
 
     .slide__closeMenuContainer {
@@ -58,11 +57,16 @@ $menuMarginsLeft: 5%;
         margin-left: 3%;
         margin-top: 25%;
         font-size: 90%;
-
+        color: $tiertary;
 
         .slide__links {
             display: block;
             margin-bottom: 10%;
+            text-decoration: none;
+        }
+
+        .slide__links:visited {
+            color: $tiertary;
 
         }
     }
@@ -81,29 +85,49 @@ $menuMarginsLeft: 5%;
 //-- HOME COMPONENT --//
 #home {
 
-    width: 100vw;
-    height: 30vh;
+    width: 100%;
+    height: 30%;
     background-color: $secondary;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .home__container{
+
+    .home__container {
+        margin-top: 10%;
         margin-left: 5%;
         width: 100%;
-        height: 100%;   
+        height: 100%;
         display: flex;
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        .items{
+
+        .items {
             margin-bottom: 10%;
         }
-        .home__container--title{
+
+        .home__container--title {
+            color: $primary;
+            font-size: 30px;
+            width: 90%;
 
         }
-        .home__container--paragraph{
+
+        .home__container--link {
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
         }
+
+        .home__container--link:focus {
+            outline: none;
+        }
+
+        .home__container--link:active {
+            color: transparent;
+        }
+
+        .home__container--paragraph {}
 
     }
 }
@@ -111,17 +135,25 @@ $menuMarginsLeft: 5%;
 //-- END HOME COMPONENT --//
 
 //-- MUSIC VIDEOS COMPONENT --//
-#musicvideos {
-
+#ultimos-lanzamientos {
     width: 100vw;
-    height: 100vh;
-    background-color: $secondary;
+    height: 100vh;  
+    display: flex;
+    align-items: center;
+    background-color: $secondary-transparent ;
+    .ultimos-lanzamientos__container {
+        width: 100%;
+        height: 90%; 
+        margin-left: 5%;
+        color: $primary;
+
+    }
 }
 
-//-- END HOME COMPONENT --//
+//-- END HOME COMPONENT --//  
 
 //-- MUSIC STORE COMPONENT --//
-#musicstore {
+#tienda {
 
     width: 100vw;
     height: 100vh;
@@ -131,7 +163,7 @@ $menuMarginsLeft: 5%;
 //-- END MUSIC STORE COMPONENT --//
 
 //-- CONTACT COMPONENT --//
-#contact {
+#contacto {
 
     width: 100vw;
     height: 50vh;
@@ -150,38 +182,116 @@ $menuMarginsLeft: 5%;
 
 //-- END FOOTER COMPONENT --//
 
+@media (min-width: 768px) {
 
+    //--MUSIC STORE COMPONENT --//
+    #home {
+
+        .home__container {
+
+            .items {
+                margin-bottom: 5%;
+            }
+
+            .home__container--title {
+                font-size: 50px;
+                width: 90%;
+            }
+
+            .home__container--link {
+                text-decoration: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .home__container--link:focus {
+                outline: none;
+            }
+
+            .home__container--link:active {
+                color: transparent;
+            }
+
+
+        }
+    }
+
+    //-- END MUSIC STORE COMPONENT --//
+}
 
 //RESPONSIVE DESIGN - MEDIA QUERIES 
 @media (min-width: 1200px) {
     //-- MENU COMPONENT --// 
-    .nav{
+
+    .nav {
         display: none;
     }
-    .navDesktop {   
+
+    .navDesktop {
+
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: $secondary;
-        width:  100vw;
+        width: 100vw;
         height: 15vh;
-        border-bottom: solid 0.5px $tiertary;
-        .nav__container{
+
+        .nav__container {
             width: 60%;
-        
-        .nav__containerLinks{
-            width: 70%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            .nav__containerLinks--link{
-                letter-spacing: 1px;
+
+            .nav__containerLinks {
+                width: 70%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .nav__containerLinks--link {
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                }
+
+                .nav__containerLinks--link {
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                }
+
+                .nav__containerLinks--link:visited {
+                    color: white;
+                }
+
+                .nav__containerLinks--link:active {
+                    color: $tiertary;
+                }
+
             }
-        }
         }
 
     }
 
-
     // --END MENU COMPONENT --//
+
+    //-- HOME COMPONENT --//
+    #home {
+
+        .home__container {
+            //background-color: red;
+            margin-left: 22%;
+
+            .items {}
+
+            .home__container--title {}
+
+            .home__container--link {}
+
+            .home__container--link:focus {}
+
+            .home__container--link:active {}
+
+            .home__container--paragraph {}
+
+        }
+    }
+
+    //-- END HOME COMPONENT --//
+
+
 }

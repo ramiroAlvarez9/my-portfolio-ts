@@ -16,19 +16,16 @@ export default function DesktopNav() {
 
             <div className="nav__containerLinks">
               <Link className="nav__containerLinks--link" href="/">
-                HOME
+                INICIO
               </Link>
               <Link className="nav__containerLinks--link" href="#musicvideos">
-                MUSIC VIDEOS
+                ULTIMOS LANZAMIENTOS
               </Link>
               <Link className="nav__containerLinks--link" href="#musicstore">
-                MUSIC STORE
+                TIENDA DE BEATS 
               </Link>
               <Link className="nav__containerLinks--link" href="#contact">
-                CONTACT
-              </Link>
-              <Link className="nav__containerLinks--link" href="#footer">
-                FOOTER
+                CONTACTO
               </Link>
             </div>
           </div>

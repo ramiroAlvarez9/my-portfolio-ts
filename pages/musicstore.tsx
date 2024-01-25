@@ -17,9 +17,9 @@ export default function MusicStore() {
   return ( 
     <>
       
-      <section id="musicstore">
+      <section id="tienda">
       
-      music store
+      TIENDA
       
         <iframe
           id="embedSoundClick"

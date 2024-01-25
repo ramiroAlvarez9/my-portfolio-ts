@@ -1,7 +1,7 @@
 "use client";
 import NavBar from "@/components/NavBar";
 import { Button } from "@mui/material";
-import Link from "next/link";
+import Link from "next/link"; 
 
 export default function Main() {
   return (
@@ -9,15 +9,17 @@ export default function Main() {
       <NavBar />
 
       <section id="home">
+
         <div className="home__container" >
 
-          <h1 className="home__container--title items" > HEAVEN'S DOOR </h1>
+          <h1 className="home__container--title items" > GOLDEN <br /> DRAGON BEATS </h1>
 
           <p  className="home__container--title--paragraph items">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Eius
             maiores id ad.
           </p>
-
+          <Link href= '#musicstore' className= 'home__container--link'>
           <Button 
             variant="outlined" 
             className="items"
@@ -28,9 +30,13 @@ export default function Main() {
                    borderColor: '#fac959'
               }}
           >
+            
             COMPRAR BEATS
+            
           </Button>
-        </div>
+          </Link>
+          
+        </div>   
       </section>
     </>
   );

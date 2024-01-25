@@ -2,7 +2,7 @@
 export default function Contact() {
     return (
       <>
-      <section id="contact">
+      <section id="contacto">
         Contact
       </section>
       
