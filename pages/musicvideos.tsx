@@ -1,16 +1,34 @@
 "use client";
+import ArrayOfVideos from "@/components/ArrayOfVideos";
+import { getServerSideProps } from "../src/app/getServerSideProps";
+import { useEffect, useState } from "react";
 
 export default function MusicVideos() {
-  return (
-    <>
-      <section id="ultimos-lanzamientos">
-        <div className="ultimos-lanzamientos__container">
-          
-          <h2>ÚLTIMOS LANZAMIENTOS</h2>
+  const [isLoading, setIsLoading] = useState<Boolean>(true);
+  const [youtubePlaylistItemsInfoProps, setYoutubePlaylistItemsInfoProps] =
+    useState<Object | any>({});
 
-        </div>
+  const getApiInfo = async () =>
+    setYoutubePlaylistItemsInfoProps(await getServerSideProps());
 
-      </section>
-    </>
+  useEffect(() => {
+    getApiInfo();
+  }, []);
+
+  return isLoading ? (
+    <section id="ultimos-lanzamientos">
+      <div className="ultimos-lanzamientos__container">
+        <h2>ULTIMOS LANZAMIENTOS</h2>
+        <h1>Cargando....</h1>
+      </div>
+    </section>
+  ) : (
+    <section id="ultimos-lanzamientos">
+      <ArrayOfVideos
+        ArrayOfVideos={
+          youtubePlaylistItemsInfoProps.props.YoutubePlaylistItemsInfo.items
+        }
+      />
+    </section>
   );
 }
