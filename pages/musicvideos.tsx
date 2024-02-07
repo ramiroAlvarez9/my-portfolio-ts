@@ -8,6 +8,7 @@ import ReactLoading from "react-loading";
 export default function MusicVideos() {
   const [isLoading, setIsLoading] = useState<Boolean>(true);
 
+
   const [youtubePlaylistItemsInfoProps, setYoutubePlaylistItemsInfoProps] =
     useState<Object | any>({});
 
@@ -33,16 +34,20 @@ export default function MusicVideos() {
     </section>
   ) : (
     <section id="ultimos-lanzamientos">
-
       <div className="ultimos-lanzamientos__container">
-      
-      <h2 className="ultimos-lanzamientos__title">ULTIMOS <br /> LANZAMIENTOS</h2> 
+        <h2 className="ultimos-lanzamientos__title">
+          ULTIMOS <br /> LANZAMIENTOS
+        </h2>
 
         <ArrayOfVideos
           ArrayOfVideos={
             youtubePlaylistItemsInfoProps.props.YoutubePlaylistItemsInfo.items
           }
         />
+
+
+
+
       </div>
     </section>
   );
