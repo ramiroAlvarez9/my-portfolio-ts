@@ -1,7 +1,13 @@
 @import './reset.min.scss';
 @import './colors-palette.scss';
 
-$menuMarginsLeft: 5%;
+@mixin titles {
+    margin: 15% 0 15% 0;
+    font-size: 30px;
+    color: $primary;
+    margin-left: 5%;
+}
+
 
 //-- MENU COMPONENT --//
 .navDesktop {
@@ -11,7 +17,7 @@ $menuMarginsLeft: 5%;
 .nav {
     width: 100vw;
     height: 15vh;
-    background-color: $secondary;
+    background-color: $secondary-transparent;
 
 
     .nav__logo {
@@ -58,16 +64,13 @@ $menuMarginsLeft: 5%;
         margin-top: 25%;
         font-size: 90%;
         color: $tiertary;
-
         .slide__links {
             display: block;
             margin-bottom: 10%;
             text-decoration: none;
         }
-
         .slide__links:visited {
             color: $tiertary;
-
         }
     }
 
@@ -87,7 +90,7 @@ $menuMarginsLeft: 5%;
 
     width: 100%;
     height: 30%;
-    background-color: $secondary;
+    background-color: $secondary-transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,6 +111,8 @@ $menuMarginsLeft: 5%;
         }
 
         .home__container--title {
+            
+    
             color: $primary;
             font-size: 30px;
             width: 90%;
@@ -136,27 +141,49 @@ $menuMarginsLeft: 5%;
 
 //-- MUSIC VIDEOS COMPONENT --//
 #ultimos-lanzamientos {
-    width: 100vw;
-    height: 100vh;  
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
-    background-color: $secondary-transparent ;
+    flex-direction: column;
+    background-color: $secondary ;
+
+    .loading__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ultimos-lanzamientos__title {
+        @include titles();
+    }
+
     .ultimos-lanzamientos__container {
+        display: grid;
         width: 100%;
-        height: 90%; 
-        margin-left: 5%;
+        height: 100%;
+        grid-template-columns: 100%;
+        grid-template-rows: 25%;
+        row-gap: 5%;
+        margin-bottom: 50%;
         color: $primary;
     }
 }
+
 
 //-- END HOME COMPONENT --//  
 
 //-- MUSIC STORE COMPONENT --//
 #tienda {
 
-    width: 100vw;
-    height: 100vh;
-    background-color: $secondary;
+    width : 100% ;
+    height: 100% ;
+    background-color: $secondary-transparent;
+    border: solid 1px black;
+    
+    .tienda__title{
+        @include titles();
+    }
 }
 
 //-- END MUSIC STORE COMPONENT --//
