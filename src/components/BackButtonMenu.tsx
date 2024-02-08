@@ -12,7 +12,6 @@ interface Props
 
 const BackButtonMenu = ({ocultar} : Props) => 
 {
-
   const linkStyle = {
     styles: {
       textDecoration: "none",
