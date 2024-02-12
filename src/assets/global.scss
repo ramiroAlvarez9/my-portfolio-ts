@@ -107,6 +107,8 @@
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
+        
+    
 
         .items {
             margin-bottom: 10%;
@@ -248,18 +250,31 @@
 #contacto {
     width: 100vw;
     height: 50vh;
-    background-color: $secondary;
+    background-color: $secondary-transparent;
     display: flex;
-    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    border-bottom: solid 0.5px rgba(128, 128, 128, 0.363);
+
+    .contacto__title{
+        @include titles();
+        margin-left: 2.5%;
+    }
 
     .contacto__container{
         //border: solid 1px red;
+
         width: 95%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-left: 2.5%;
+
+        .contacto__container--button{
+            margin-top: 10%;
+            margin-bottom: 5%;
+        }
 
     }
 }
@@ -281,7 +296,12 @@
 
         .footer__containerLogo {
             margin-left: 2%;
+          
 
+                .footer__containerLogo--paragraph{
+                    font-size:8px;
+                }
+            
         }
 
         .footer__socialMediaContaner {
@@ -298,7 +318,7 @@
 
 //RESPONSIVE DESIGN - MEDIA QUERIES 
 
-@media (min-width: 768px) {
+@media (min-width: 768px ) {
     
 //-- MENU COMPONENT --//
 
@@ -330,7 +350,6 @@
     .slide__closeMenuContainer {
         width: 100vw;
         height: 7.5vh;
-
         .closeIcon {
             //margin-right: 10%;
         }
@@ -367,12 +386,15 @@
 //-- END MENU COMPONENT --//
 
 
-    //--MUSIC STORE COMPONENT --//
+    //--HOME COMPONENT --//
     #home {
         background-color: $secondary;
-        height: 40vh;
+        height: 45vh;
+        max-width: 832px;
+        min-height: 252.55px;
+        
         .home__container {
-
+            
             .items {
                 margin-bottom: 5%;
             }
@@ -399,7 +421,7 @@
         }
     }
 
-    //-- END MUSIC STORE COMPONENT --//
+    //-- END HOME COMPONENT --//
 
     //-- MUSIC VIDEOS COMPONENT --//
 
@@ -440,9 +462,45 @@
         }
     }
     
+    //-- CONTACT COMPONENT --//
+#contacto {
+    height: 38vh;
+    align-items: center;
+    .contacto__title{
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 20%;
+        text-align: center;
+    }
+
+    .contacto__container{
+
+        width: 100%;
+        margin-left: 0%;
+        align-items: center;
+        
+
+        .contacto__container--button{
+            margin-top: 10%;
+            margin-bottom: 5%;
+        }
+    }
+}
     //-- FOOTER COMPONENT --//
     #footer {
         background-color: $secondary-tablet-desktop;
+        .footer__container{
+            .footer__containerLogo{
+
+                .footer__containerLogo--paragraph{
+                    font-size:12px;
+                }
+            }
+            .footer__socialMediaContaner {
+                margin-right: 2%;
+                width: 25%;
+            }
+        }
     }
 
     //-- END FOOTER COMPONENT --//

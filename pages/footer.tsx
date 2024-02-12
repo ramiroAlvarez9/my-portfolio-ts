@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="footer__container flex items-center justify-between ">
           <div className="footer__containerLogo ">
             {/* <Image src={Logo} width={75} height={75} alt="logo" / > */}
-            <p style ={{fontSize: '8px'}}> Golden Dragon Beats, All rights reserved </p>
+            <p className = 'footer__containerLogo--paragraph' > Golden Dragon Beats, All rights reserved </p>
           </div>
 
           <div className="footer__socialMediaContaner flex justify-between">
