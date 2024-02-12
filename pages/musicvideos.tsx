@@ -6,10 +6,9 @@ import { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
 
 export default function MusicVideos() {
+  
   const [isLoading, setIsLoading] = useState<Boolean>(true);
-
-  const [youtubePlaylistItemsInfoProps, setYoutubePlaylistItemsInfoProps] =
-    useState<Object | any>({});
+  const [youtubePlaylistItemsInfoProps, setYoutubePlaylistItemsInfoProps] = useState<Object | any>({});
 
   const getApiInfo = async () => {
     setYoutubePlaylistItemsInfoProps(await getServerSideProps());

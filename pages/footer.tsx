@@ -25,7 +25,7 @@ export default function Footer() {
             >
               <TikTokIcon />
             </a>
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <a href="https://soundcloud.com/goldendragonbeats   " target="_blank" rel="noopener noreferrer">
               <SoundcloudIcon />
             </a>
 
@@ -36,7 +36,7 @@ export default function Footer() {
             >
               <YoutubeIcon />
             </a>
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/goldendragonbeats" target="_blank" rel="noopener noreferrer">
               <InstagramIcon />
             </a>
           </div>
