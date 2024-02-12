@@ -1,6 +1,6 @@
 "use client";
 import Img from "react-cool-img";
-import PlayIcon from "./PlayIcon";
+import PlayIcon from "./Icons/PlayIcon";
 import { useState } from "react";
 import YoutubeModal from "./YoutubeModal";
 
@@ -10,14 +10,13 @@ interface Props {
 
 export default function ArrayOfVideos({ ArrayOfVideos }: Props) {
   const [actualVideoId, setActualVideoId] = useState<string>("");
-  const [translateModal, setTranslateModal] = useState<number>(-100);
+  const [translateModal, setTranslateModal] = useState<number>(-999);
 
   function setVideoID(id: string) {
-    console.log("hola");
     setActualVideoId(id);
     setTranslateModal(0);
   }
-  console.log(translateModal)
+  console.log(translateModal);
 
   const arrayOfVideos = ArrayOfVideos.map(
     (object: Object | any, index: number) => {
@@ -30,7 +29,9 @@ export default function ArrayOfVideos({ ArrayOfVideos }: Props) {
             onClick={() => setVideoID(object.snippet.resourceId.videoId)}
           >
             <div className="img__container--iconContainer">
-              <PlayIcon />
+              <div className="img__container--icon">
+                <PlayIcon />
+              </div>
             </div>
             <Img
               key={index}
@@ -50,19 +51,14 @@ export default function ArrayOfVideos({ ArrayOfVideos }: Props) {
   );
 
   return (
-    
-      <> 
-        { arrayOfVideos }  
+    <>
+      {arrayOfVideos}
 
-        <YoutubeModal
-          
-          videoId           = {actualVideoId}
-          translateModal    = {translateModal}
-          setTranslateModal = {setTranslateModal}
-
-        />
-      
-      
-      </>
-  ); 
+      <YoutubeModal
+        videoId={actualVideoId}
+        translateModal={translateModal}
+        setTranslateModal={setTranslateModal}
+      />
+    </>
+  );
 }

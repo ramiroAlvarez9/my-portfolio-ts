@@ -2,7 +2,7 @@
 @import './colors-palette.scss';
 
 @mixin titles {
-    margin: 15% 0 15% 0;
+    margin: 15% 0 10% 0;
     font-size: 30px;
     color: $primary;
     margin-left: 5%;
@@ -88,6 +88,7 @@
 
 
 //-- HOME COMPONENT --//
+
 #home {
 
     width: 100%;
@@ -96,7 +97,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 
     .home__container {
         margin-top: 10%;
@@ -149,25 +149,31 @@
     align-items: center;
     flex-direction: column;
     background-color: $secondary;
-
-    .ultimos-lanzamientos__container {
-        display: grid;
+    .ultimos-lanzamientos__titleContainer{
         width: 100%;
+    }
+    .ultimos-lanzamientos__container {
+
+        display: grid;
+        width: 95%;
         height: 100%;
         grid-template-columns: 100%;
-        grid-template-rows: 25%;
-        row-gap: 5%;
-        margin-bottom: 50%;
+        grid-template-rows: 35%;
+        row-gap: 1%;
+        column-gap: 3%;
+        margin-bottom: 30%;
         color: $primary;
 
-        .modal{
+        .modal {
             width: 100vw;
-            height: 100vh;
+            height: 100%;
             position: fixed;
-            z-index: 3;
+            z-index: 5;
             top: 0;
-            background-color:  rgba(0, 0, 0, 0.219);
-            .modal__container{
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.219);
+
+            .modal__container {
                 width: 100%;
                 height: 100%;
                 display: flex;
@@ -175,10 +181,10 @@
                 justify-content: center;
                 flex-direction: column;
 
-
-                .modal__container--iconContainer{
-                    //background-color: red;
-                    width: 70%;
+                .modal__container--iconContainer {
+                    width: 100%;
+                    margin-bottom: 5%;
+                    margin-right: 2%;
                     display: flex;
                     justify-content: end;
                 }
@@ -194,27 +200,30 @@
 
     .ultimos-lanzamientos__title {
         @include titles();
+        margin-left: 2.5%;
     }
 
     .img__container {
         background-color: rgba(255, 255, 255, 0);
         width: 100%;
         height: auto;
-        display: flex;
-        margin-left: -5%;
 
         .img__container--iconContainer {
 
             position: relative;
             z-index: 3;
-            left: 50%;
-            top: 42%;
+            top: 50%;
+            .img__container--icon{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
         }
 
 
     }
 
-    
+
 }
 
 
@@ -237,29 +246,131 @@
 
 //-- CONTACT COMPONENT --//
 #contacto {
-
     width: 100vw;
     height: 50vh;
     background-color: $secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .contacto__container{
+        //border: solid 1px red;
+        width: 95%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
 }
+
+
+
 
 //-- END CONTACT COMPONENT --//
 
 //-- FOOTER COMPONENT --//
 #footer {
-
-    width: 100vw;
+    width: 100%;
     height: 10vh;
-    background-color: $secondary;
-}
+    background-color: $secondary-transparent;
 
+
+    .footer__container {
+        height: 100%;
+
+        .footer__containerLogo {
+            margin-left: 2%;
+
+        }
+
+        .footer__socialMediaContaner {
+            margin-right: 2%;
+            width: 35%;
+        }
+    }
+
+}
 //-- END FOOTER COMPONENT --//
 
+
+
+
+//RESPONSIVE DESIGN - MEDIA QUERIES 
+
 @media (min-width: 768px) {
+    
+//-- MENU COMPONENT --//
+
+.nav {
+    background-color: $secondary;
+    .nav__logo {
+        margin-left: 2%;
+    }
+
+    .nav__hamburguer {
+        margin-right: 2%;
+
+    }
+}
+
+.slide {
+
+    width: 100%;
+    height: 100%;
+    background-color: $secondary;
+    position: fixed;
+    z-index: 2;
+    top: 0vh;
+    transform: transition;
+    transition: 0.5s;
+    color: $primary;
+    overflow: scroll;
+
+    .slide__closeMenuContainer {
+        width: 100vw;
+        height: 7.5vh;
+
+        .closeIcon {
+            //margin-right: 10%;
+        }
+    }
+
+    .slide__logo {
+        margin-left: 10%;
+
+    }
+
+    .slide__containerLinks {
+        width: 100%;
+        height: 100%;
+        margin-left: 3%;
+        margin-top: 25%;
+        font-size: 90%;
+        color: $tiertary;
+
+        .slide__links {
+            display: block;
+            margin-bottom: 10%;
+            text-decoration: none;
+        }
+
+        .slide__links:visited {
+            color: $tiertary;
+        }
+    }
+
+}
+
+
+
+//-- END MENU COMPONENT --//
+
 
     //--MUSIC STORE COMPONENT --//
     #home {
-
+        background-color: $secondary;
+        height: 40vh;
         .home__container {
 
             .items {
@@ -289,9 +400,57 @@
     }
 
     //-- END MUSIC STORE COMPONENT --//
-}
 
-//RESPONSIVE DESIGN - MEDIA QUERIES 
+    //-- MUSIC VIDEOS COMPONENT --//
+
+    #ultimos-lanzamientos {
+        height: 75vh;
+        background-color: $secondary-tablet-desktop;
+        .ultimos-lanzamientos__container {
+            //margin-left: 5%;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50%;
+            row-gap: 1%;
+            column-gap: 1%;
+            
+
+        }
+        .ultimos-lanzamientos__title {
+            @include titles();
+            margin-left: 2.5%;
+            margin-top: 10%;
+
+        }
+
+    }
+
+
+    //-- END MUSIC VIDEOS COMPONENT --///
+
+    #tienda {
+
+        background-color: $secondary;
+        border: solid 1px black;
+        height: 100vh;
+    
+        .tienda__title {
+            margin-top: 5%;
+            margin-bottom: 5%;
+            margin-left: 2.5%;
+        }
+    }
+    
+    //-- FOOTER COMPONENT --//
+    #footer {
+        background-color: $secondary-tablet-desktop;
+    }
+
+    //-- END FOOTER COMPONENT --//
+
+
+}
+    
+
 @media (min-width: 1200px) {
     //-- MENU COMPONENT --// 
 

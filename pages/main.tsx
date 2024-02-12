@@ -19,7 +19,7 @@ export default function Main() {
             Eius
             maiores id ad.
           </p>
-          <Link href= '#musicstore' className= 'home__container--link'>
+          <Link href= '#tienda' className= 'home__container--link'>
           <Button 
             variant="outlined" 
             className="items"

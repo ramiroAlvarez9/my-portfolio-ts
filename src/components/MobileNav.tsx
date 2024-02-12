@@ -3,7 +3,7 @@ import Image from "next/image";
 import Logo from "../img/logo.png";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import ChevronRightIcon from "./ChevronRightIcon";
+import ChevronRightIcon from "./Icons/ChevronRightIcon";
 
 export default function MobileNav() {
   const [actualWidthSize, setWidthSize] = useState<number>(0);
@@ -23,8 +23,7 @@ export default function MobileNav() {
   return (
     <>
       <nav className="nav flex justify-between items-center bg-orange-300 bg-transparent">
-        <Image src={Logo} width={75} height={75} alt="logo" />
-
+        <Image src={Logo} width={75} height={75} alt="logo" / > 
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -69,19 +68,27 @@ export default function MobileNav() {
         <div className="slide__logo">DRAGON BEATS</div>
 
         <div className="slide__containerLinks ">
-          <Link className="slide__links" href="/" onClick={closeTheMenu} >
+          <Link className="slide__links" href="/" onClick={closeTheMenu}>
             <ChevronRightIcon />
             INICIO
           </Link>
-          <Link className="slide__links" href="#ultimos-lanzamientos" onClick={closeTheMenu}>
-            <ChevronRightIcon /> 
+          <Link
+            className="slide__links"
+            href="#ultimos-lanzamientos"
+            onClick={closeTheMenu}
+          >
+            <ChevronRightIcon />
             ULTIMOS LANZAMIENTOS
           </Link>
-          <Link className="slide__links" href="#tienda"   onClick={closeTheMenu}>
+          <Link className="slide__links" href="#tienda" onClick={closeTheMenu}>
             <ChevronRightIcon />
             TIENDA
           </Link>
-          <Link className="slide__links" href="#contacto" onClick={closeTheMenu}>
+          <Link
+            className="slide__links"
+            href="#contacto"
+            onClick={closeTheMenu}
+          >
             <ChevronRightIcon />
             CONTACTO
           </Link>

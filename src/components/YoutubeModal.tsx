@@ -1,9 +1,8 @@
 "use client";
 import YouTube from "react-youtube";
-import CloseIcon from "./CloseIcon";
+import CloseIcon from "./Icons/CloseIcon";
 import "../assets/global.scss";
 
-import { useContext } from "react";
 
 interface Props {
   videoId: string;
@@ -11,9 +10,10 @@ interface Props {
   setTranslateModal: any;
 }
 export default function YoutubeModal({ videoId, translateModal,setTranslateModal }: Props) {
+
   const opts = {
-    width: "100%",
-    height: "100%",
+    width: `${window.screen.width}px` ,
+    height: `${ (window.screen.width) * 0.5625   }px`,
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
@@ -27,11 +27,12 @@ export default function YoutubeModal({ videoId, translateModal,setTranslateModal
         className="modal"
         style={{
           transform: `translate(${translateModal}%)`,
-          transition: "0.9s",
+          transition: "0.2s",
         }}
       >
         <div className="modal__container">
-          <div className="modal__container--iconContainer" onClick = { ()=> setTranslateModal(-100) }>
+
+          <div className="modal__container--iconContainer" onClick = { ()=> setTranslateModal(-999) }>
             <CloseIcon  />
           </div>
 
