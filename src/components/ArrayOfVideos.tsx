@@ -16,7 +16,6 @@ export default function ArrayOfVideos({ ArrayOfVideos }: Props) {
     setActualVideoId(id);
     setTranslateModal(0);
   }
-  console.log(translateModal);
 
   const arrayOfVideos = ArrayOfVideos.map(
     (object: Object | any, index: number) => {

@@ -3,17 +3,33 @@ import YouTube from "react-youtube";
 import CloseIcon from "./Icons/CloseIcon";
 import "../assets/global.scss";
 
-
 interface Props {
   videoId: string;
   translateModal: number;
   setTranslateModal: any;
 }
-export default function YoutubeModal({ videoId, translateModal,setTranslateModal }: Props) {
+export default function YoutubeModal({
+  videoId,
+  translateModal,
+  setTranslateModal,
+}: Props) {
+  
+  
+  /*   
+  if (window.matchMedia("(orientation: portrait)").matches) {
+    alert("portrait");
+  }
+  
+  if (window.matchMedia("(orientation: landscape)").matches) {
+    alert("landscape");
+  }
+  
+  */
 
   const opts = {
-    width: `${window.screen.width}px` ,
-    height: `${ (window.screen.width) * 0.5625   }px`,
+    width: `${window.screen.width}px `,
+    height: `${window.screen.width * 0.5625}px`,
+
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
@@ -31,9 +47,11 @@ export default function YoutubeModal({ videoId, translateModal,setTranslateModal
         }}
       >
         <div className="modal__container">
-
-          <div className="modal__container--iconContainer" onClick = { ()=> setTranslateModal(-999) }>
-            <CloseIcon  />
+          <div
+            className="modal__container--iconContainer"
+            onClick={() => setTranslateModal(-999)}
+          >
+            <CloseIcon />
           </div>
 
           <YouTube

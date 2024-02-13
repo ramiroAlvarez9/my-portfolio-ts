@@ -18,7 +18,7 @@ export default function MobileNav() {
       setSlideMenuPositionX(10);
     }
   };
-  const closeTheMenu = () => setSlideMenuPositionX(100);
+  const closeTheMenu = () => setSlideMenuPositionX(999);
 
   return (
     <>
@@ -41,7 +41,7 @@ export default function MobileNav() {
         className="slide"
         style={{ transform: `translate(${slideMenuPositionX}%)` }}
       >
-        <div className="slide__closeMenuContainer flex border-gray-100 justify-start items-center justify-end">
+        <div className="slide__closeMenuContainer flex border-gray-100 items-center justify-end">
           <svg
             //width and height -- icon
             style={{
