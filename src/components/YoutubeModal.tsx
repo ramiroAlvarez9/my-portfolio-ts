@@ -1,6 +1,9 @@
 "use client";
 import YouTube from "react-youtube";
 import CloseIcon from "./Icons/CloseIcon";
+import { useState, useEffect } from "react";
+import ReactLoading from "react-loading";
+
 import "../assets/global.scss";
 
 interface Props {
@@ -13,28 +16,25 @@ export default function YoutubeModal({
   translateModal,
   setTranslateModal,
 }: Props) {
-  
-  
-  /*   
-  if (window.matchMedia("(orientation: portrait)").matches) {
-    alert("portrait");
-  }
-  
-  if (window.matchMedia("(orientation: landscape)").matches) {
-    alert("landscape");
-  }
-  
-  */
+  const [youtubeVideoWidth, setYoutubeVideoWidth] = useState<number>(0);
 
   const opts = {
-    width: `${window.screen.width}px `,
-    height: `${window.screen.width * 0.5625}px`,
-
+    width: `${youtubeVideoWidth}px `,
+    height: `${youtubeVideoWidth * 0.5625}px`,
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
+
+  useEffect(() => {
+    if (window.matchMedia("(orientation: portrait)").matches) {
+      setYoutubeVideoWidth(window.screen.width);
+    }
+
+    if (window.matchMedia("(orientation: landscape)").matches) {
+      setYoutubeVideoWidth(window.screen.width / 2);
+    }
+  }, []);
 
   return (
     <>
@@ -53,25 +53,35 @@ export default function YoutubeModal({
           >
             <CloseIcon />
           </div>
-
-          <YouTube
-            videoId={videoId} // defaults -> ''
-            id={""} // defaults -> ''
-            className={""} // defaults -> ''
-            iframeClassName={""} // defaults -> ''
-            style={{}} // defaults -> {}
-            title={""} // defaults -> ''
-            loading={undefined} // defaults -> undefined
-            opts={opts} // defaults -> {}
-            onReady={undefined} // defaults -> noop
-            onPlay={undefined} // defaults -> noop
-            onPause={undefined} // defaults -> noop
-            onEnd={undefined} // defaults -> noop
-            onError={undefined} // defaults -> noop
-            onStateChange={undefined} // defaults -> noop
-            onPlaybackRateChange={undefined} // defaults -> noop
-            onPlaybackQualityChange={undefined} // defaults -> noop
-          />
+          {youtubeVideoWidth === 0 ? (
+            <ReactLoading
+              type={"spinningBubbles"}
+              color={"#fac959"}
+              height={250}
+              width={250}
+            />
+          ) : (
+            <YouTube
+              videoId={videoId} // defaults -> ''
+              id={""} // defaults -> ''
+              className={""} // defaults -> ''
+              iframeClassName={""} // defaults -> ''
+              style={{}} // defaults -> {}
+              title={""} // defaults -> ''
+              loading={undefined} // defaults -> undefined
+              opts={opts} // defaults -> {}
+              onReady={() => {
+                console.log("hola");
+              }} // defaults -> noop
+              onPlay={undefined} // defaults -> noop
+              onPause={undefined} // defaults -> noop
+              onEnd={undefined} // defaults -> noop
+              onError={undefined} // defaults -> noop
+              onStateChange={undefined} // defaults -> noop
+              onPlaybackRateChange={undefined} // defaults -> noop
+              onPlaybackQualityChange={undefined} // defaults -> noop
+            />
+          )}
         </div>
       </div>
     </>
