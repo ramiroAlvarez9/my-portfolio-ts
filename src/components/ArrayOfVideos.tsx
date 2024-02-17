@@ -9,31 +9,39 @@ interface Props {
 }
 
 export default function ArrayOfVideos({ ArrayOfVideos }: Props) {
+  
+  //video size for videos
   const [actualVideoId, setActualVideoId] = useState<string>("");
+  //modal translate values - base value: -999%, other: 0% 
   const [translateModal, setTranslateModal] = useState<number>(-999);
 
-  function setVideoID(id: string) {
+
+  function setVideoID  (id: string): void 
+  {
     setActualVideoId(id);
     setTranslateModal(0);
   }
 
+  console.log();
+  
   const arrayOfVideos = ArrayOfVideos.map(
-    (object: Object | any, index: number) => {
+    (object: Object | any, index: number) => 
+    {
+
       return (
         //// JSX ELEMENTS ////
         <>
           <div
             className="img__container"
-            key={index}
-            onClick={() => setVideoID(object.snippet.resourceId.videoId)}
+            key={object.id} 
+            onClick={ () => setVideoID(object.snippet.resourceId.videoId)}
           >
-            <div className="img__container--iconContainer">
-              <div className="img__container--icon">
-                <PlayIcon />
+            <div className="img__container--iconContainer"   >
+              <div className="img__container--icon"  >
+                <PlayIcon   />
               </div>
             </div>
             <Img
-              key={index}
               style={{
                 backgroundColor: "grey",
                 width: "100%",
@@ -52,7 +60,6 @@ export default function ArrayOfVideos({ ArrayOfVideos }: Props) {
   return (
     <>
       {arrayOfVideos}
-
       <YoutubeModal
         videoId={actualVideoId}
         translateModal={translateModal}

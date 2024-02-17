@@ -237,12 +237,10 @@
 
 //-- MUSIC STORE COMPONENT --//
 #tienda {
-
     width: 100%;
     height: 100%;
     background-color: $secondary-transparent;
     border: solid 1px black;
-
     .tienda__title {
         @include titles();
     }
@@ -283,10 +281,8 @@
     }
 }
 
-
-
-
 //-- END CONTACT COMPONENT --//
+
 
 //-- FOOTER COMPONENT --//
 #footer {
@@ -436,7 +432,6 @@
         background-color: $secondary-tablet-desktop;
 
         .ultimos-lanzamientos__container {
-            //margin-left: 5%;
             grid-template-columns: 50% 50%;
             grid-template-rows: 50%;
             row-gap: 1%;
@@ -580,6 +575,7 @@
     }
 
     //-- END HOME COMPONENT --//
+
     #ultimos-lanzamientos {
         width: 100%;
         height: 100%;
@@ -593,7 +589,7 @@
             display: grid;
             width: 100%;
             height: 100%;
-            grid-template-columns: 50% 50% ;
+            grid-template-columns: 50% 50%;
             grid-template-rows: 50% 50%;
             row-gap: 1%;
             column-gap: 3%;
@@ -601,7 +597,7 @@
             color: $primary;
 
             .modal {
-                
+
                 .modal__container {
                     .modal__container--iconContainer {}
                 }
@@ -620,9 +616,49 @@
                 .img__container--icon {}
             }
 
+        }
+
+    }
+
+    //-- MUSIC STORE COMPONENT --//
+    #tienda {
+
+        width: 100%;
+        height: 100%;
+        background-color: $secondary-tablet-desktop;
+        border: solid 1px black;
+
+        .tienda__title {
+            @include titles();
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    }
+
+    //-- END MUSIC STORE COMPONENT --//
+    //-- CONTACT COMPONENT --//
+    #contacto {
+        background-color: $secondary-tablet-desktop;
+        //max-height: 310px;
+        height: 15%;
+
+        .contacto__title {
+            margin-top: 3%; 
+            margin-bottom: 3%;
 
         }
 
+        .contacto__container {
+
+            .contacto__container--button {}
+
+        }
+    }
+    //-- END CONTACT COMPONENT --//
+
+    #footer{
+        background-color: $secondary;
+        height: 12.5vh;
     }
 
 }
