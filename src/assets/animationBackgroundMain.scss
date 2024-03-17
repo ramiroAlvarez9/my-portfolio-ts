@@ -1,20 +1,42 @@
-@mixin sp-layout {
-    @media screen and (max-width: 750px) {
-        @content;
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
     }
-}
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .gradient {
 
-@function random_range($min, $max) {
-    $rand: random();
-    $random_range: $min + floor($rand * (($max - $min) + 1));
-    @return $random_range;
-}
-
-.animationBackground {
     position: absolute;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(ellipse at bottom, #0d1d31 50%, #0c0d13 100%);
+    z-index: -2;
+    left: 0;
+    top: 0;
+    --size: 250px;
+    --speed: 50s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  
+    width: var(--size);
+    height: var(--size);
+    filter: blur(calc(var(--size) / 5));
+    background-image: linear-gradient(hsl(158, 82, 57, 85%), hsl(252, 82, 57));
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  main {
+    background-color: #222;
     overflow: hidden;
-}
+  }
+  
+  /* This is just to transition when you change the viewport size. */
+  * {
+    transition: all 0.25s ease-out;
+  }
+  
+  @media (min-width: 720px) {
+    .gradient {
+      --size: 500px;
+    }
+  }

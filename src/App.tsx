@@ -55,8 +55,11 @@ function App() {
   }, []);
 
   const LinksParaHeaderNoVaciosEnPosicion_ = (posArray: number) => (csvData[posArray] === undefined) ?  '' : csvData[posArray]['2'];
-  const ProyectosParaGaleria = ()    => csvData.slice (7, 13);
-  const experienciaParaMostrar = ()  => csvData.slice (16);
+  const ProyectosParaGaleria = ()    => csvData.slice (7, 15);
+  const experienciaParaMostrar = ()  => csvData.slice (23);
+
+  console.log(ProyectosParaGaleria());
+
 
   return (
     <>
